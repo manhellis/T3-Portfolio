@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Gif Animation</title>
+</head>
+<body class="body">
+    
+    <div>
+        <h1>Manh Ellis</h1>
+        <p>bounding box</p>
+        <button class="click">Swap</button>
+    </div>
+    
+    <div class="background">
+        <img src="santa.gif" class="fly">
+    </div>
+    
+   
+    
+</body>
+<script>
+    const background = document.querySelector(".background");
+    const button = document.querySelector(".click");
+    const body = document.querySelector(".body");
+    const fly = document.querySelector(".fly");
+    const bounds = background.getBoundingClientRect();
+    let pos = 0;
+    const imgs = ["daySnow.jpeg", "nightSnow.jpeg"];
+    const bgCol = ["#FFFFFF", "#3F4B57"]
+    button.addEventListener("click", function() {
+        pos++;
+        if (pos > 1){
+            pos = 0;
+        }
+        background.style.backgroundImage = 'url(' + imgs[pos] + ')';
+        body.style.backgroundColor = bgCol[pos];
+        
+        //console.log(pos);
+    })
+
+    
+   
+    const moveGuy = (e) => {
+        let xPos = e.clientX - bounds.left - fly.clientWidth/2;
+        let yPos = e.clientY - bounds.top - fly.clientHeight/2;
+        // Ensure xPos stays within the horizontal bounds of the background
+        if (xPos < 0) xPos = 0;
+        if (xPos > bounds.width - fly.clientWidth) xPos = bounds.width - fly.clientWidth;
+
+        // Ensure yPos stays within the vertical bounds of the background
+        if (yPos < 0) yPos = 0;
+        if (yPos > bounds.height - fly.clientHeight) yPos = bounds.height - fly.clientHeight;
+        fly.style.transform = "translate(" + xPos + "px," + yPos + "px";
+
+    }
+
+    background.addEventListener("mousemove",moveGuy);
+
+   
+    
+</script>
+</html>

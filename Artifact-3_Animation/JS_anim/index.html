@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curvy Animaion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Manh's Wave</h1>
+    <div class="container">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        
+    </div>
+   
+</body>
+<script>
+  
+    function animateCircles() {
+        const circles = document.querySelectorAll('.circle');
+        const speed = 0.003; 
+        const height = 6; 
+
+        function updatePositions() {
+            const time = Date.now() * speed;
+            
+            circles.forEach((circle, index) => {
+            const sineWave = Math.sin(time - index) * height;
+            const colorWave = Math.abs(Math.sin( 1 *(time - index) * height) ) * 120 ;
+            //console.log(colorWave)
+            circle.style.transform = `translateY(${sineWave}rem)`;// in  rem units
+            circle.style.backgroundColor = `rgb(${colorWave + 100},${colorWave+20},${colorWave +100})`;
+           
+            });
+           
+            requestAnimationFrame(updatePositions);
+        }
+
+        requestAnimationFrame(updatePositions);
+    }
+
+    animateCircles();
+</script>
+</html>

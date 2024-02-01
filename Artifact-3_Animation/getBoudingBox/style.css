@@ -1,0 +1,46 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+}
+.h1{
+    text-align: center;
+}
+.click{
+    width: 100px;
+    height: 20px;
+    bottom:100px;
+}
+
+.background {
+    width: 800px;
+    height: 100%;
+    position: relative;
+    bottom: 50px; 
+    border-radius: 10%;
+    background: url('daySnow.jpeg');
+    background-size: 200% auto;
+    transform: scale(.7);
+    animation: moveback 20s linear infinite;
+}
+
+.fly {
+    /* position: absolute;
+    bottom: 170px;
+    left:px; */
+    /* transform: scale(0.8); */
+
+}
+
+@keyframes moveback {
+    to {
+        background-position: 100% 0%;
+    }
+
+    from {
+        background-position: 0% 0%;
+    }
+}
