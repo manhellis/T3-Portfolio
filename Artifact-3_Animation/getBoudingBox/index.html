@@ -10,8 +10,8 @@
 <body class="body">
     
     <div>
-        <h1>Manh Ellis</h1>
-        <p>bounding box</p>
+        <h1 class="text">Manh Ellis</h1>
+        <p class="text">bounding box</p>
         <button class="click">Swap</button>
     </div>
     
@@ -26,11 +26,13 @@
     const background = document.querySelector(".background");
     const button = document.querySelector(".click");
     const body = document.querySelector(".body");
+    const text = document.querySelectorAll(".text");
     const fly = document.querySelector(".fly");
     const bounds = background.getBoundingClientRect();
     let pos = 0;
     const imgs = ["daySnow.jpeg", "nightSnow.jpeg"];
     const bgCol = ["#FFFFFF", "#3F4B57"]
+    const txtCol = ["#000000", "#FFFFFF"]
     button.addEventListener("click", function() {
         pos++;
         if (pos > 1){
@@ -38,6 +40,9 @@
         }
         background.style.backgroundImage = 'url(' + imgs[pos] + ')';
         body.style.backgroundColor = bgCol[pos];
+        text.forEach((txt) => {
+            txt.style.color = txtCol[pos];
+        })
         
         //console.log(pos);
     })
