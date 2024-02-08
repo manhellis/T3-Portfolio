@@ -10,22 +10,16 @@ import PromptCard from "./components/prompt";
 function App() {
     // const [count, setCount] = useState(0);
 
-
     return (
-      <>
-        <Header />
-        <Branding />
-        {/* <div className="postGrid">
-          <Card title="Card 1" content="This is the first card" />
-        </div> */}
-        <PromptCard />
-        <PostGrid />
-        <Footer />
+        <>
+            <Header />
+            <main>
+                <Branding />
+                <PostGrid />
+            </main>
 
-
-        
-      </>
-      
+            <Footer />
+        </>
     );
 }
 
