@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curvy Animaion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Manh's Wave</h1>
+    <div class="container">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        
+    </div>
+    <div class="controls">
+        <input type="range" min="0" max="0.01" step="0.001" value="0.003" id="slider">
+        <h3>Speed</h3>
+        <p id="sliderValue">0.003</p>
+        <input type="range" min="5" max="12" step="1" value="5" id="circleN">
+        <h3>Circles</h3>
+    </div>
+    
+
+    <script>
+        
+    </script>
+   
+</body>
+<script>
+    const slider = document.getElementById("slider");
+    const sliderValue = document.getElementById("sliderValue");
+    let speed = 0.003;
+    slider.addEventListener("input", function() {
+        sliderValue.textContent = this.value;
+        speed = this.value;
+
+    });
+
+    const circleN = document.getElementById("circleN");
+    circleN.addEventListener("input", function() {
+        const container = document.querySelector('.container');
+        container.innerHTML = '';
+        for (let i = 0; i < this.value; i++) {
+            const circle = document.createElement('div');
+            circle.classList.add('circle');
+            container.appendChild(circle);
+        }
+        animateCircles();
+    });
+   
+
+    function animateCircles() {
+        const circles = document.querySelectorAll('.circle');
+        const height = 6; 
+
+        function updatePositions() {
+            const time = Date.now() * speed;
+            
+            circles.forEach((circle, index) => {
+            const sineWave = Math.sin(time - index) * height;
+            const colorWave = Math.abs(Math.sin( 1 *(time - index) * height) ) * 120 ;
+            //console.log(colorWave)
+            circle.style.transform = `translateY(${sineWave}rem)`;// in  rem units
+            circle.style.backgroundColor = `rgb(${colorWave + 100},${colorWave+20},${colorWave +100})`;
+            
+            });
+            
+            requestAnimationFrame(updatePositions);
+        }
+
+        requestAnimationFrame(updatePositions);
+    }
+
+    animateCircles();
+   
+    
+    </script>
+    </html>

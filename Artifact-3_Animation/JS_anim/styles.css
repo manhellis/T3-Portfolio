@@ -1,0 +1,20 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    height: 7rem;
+    align-items: end;
+    padding-bottom: 200px;
+}
+.circle{
+    background-color: rgb(124,352,4);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+    
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Animate - Manh</title>
+    <style> 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(to right, 
+            rgba(179,220,237,1) 0%, 
+            rgba(41,184,229,1) 50%, 
+            rgba(188,224,238,1) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        object {
+            margin:auto;
+            padding: 0em 2em 2em 2em;
+            width: 90%;
+            height: 90%;
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1em;
+        }
+        button {
+            padding: 1em;
+            margin: 1em;
+            border-radius: 5px;
+            border: none;
+            background: #fff;
+            color: #000;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease, color 0.3s ease;
+        }
+        button:hover {
+            background: #9c9c9c;
+            color: #fff;
+        }
+        
+       
+
+
+    </style>
+    
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="controls">
+            <button class="animate">Animate</button>
+            <button class="stop">stop</button>
+        </div>
+        
+        <object class="object" data="./tree_1.svg" type="image/svg+xml"></object>
+    </div>
+</body>
+<script>
+    // setup variables
+    let objectTag, svgDoc, svgContent, polygons, circles;
+    let polyAnim = [];
+    let circleAnim = [];
+    let branchesAnim = [];
+    const keyframes = [ // animation keyframes
+        { fill: 'rgb(30,124,32)' },
+        { fill: 'rgb(182,0,0)' },
+        { fill: 'rgb(0,55,251)' },
+        { fill: 'rgb(223,101,0)' },
+        { fill: 'rgb(129,0,219)' }
+    ];
+
+    const randomBetween = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+
+
+    document.querySelector(".object").addEventListener('load', function() {
+    // SVG is fully loaded
+        objectTag = document.querySelector(".object");
+        svgDoc = objectTag.contentDocument
+        svgContent = svgDoc.querySelector("svg");
+        branches = svgContent.querySelectorAll(".cls-6, .cls-7, .tree");
+        polygons = svgContent.querySelectorAll(".cls-4");
+        circles = svgContent.querySelectorAll(".cls-5, .cls-3 ");
+       
+        polygons.forEach(element => {
+            let animationObj =  element.animate(keyframes, {
+                duration: randomBetween(3000, 6500), 
+                delay: randomBetween(0,2500), // Random delay up to 1s
+                iterations: Infinity,
+                easing: 'ease-in-out'
+                });
+            polyAnim.push(animationObj);
+            animationObj.pause();
+            
+        });
+
+        circles.forEach(element => {
+            let animationObj =  element.animate(keyframes, {
+                duration: randomBetween(3000, 6500), 
+                delay: randomBetween(0,2500), // Random delay up to 1s
+                iterations: Infinity,
+                easing: 'ease-in-out'
+                });
+            circleAnim.push(animationObj);
+            animationObj.pause();
+            
+        });
+        
+        branches.forEach(element => {
+            element.style.stroke = "rgb(251,255,64)";
+            element.style.strokeWidth = "1px";
+            let strokeLength = element.getTotalLength();
+            // element.style.strokeDasharray = toString(strokeLength - 100 + ' ' + strokeLength - 50); 
+            element.style.strokeDashoffset = -strokeLength;
+            element.style.strokeDasharray = "150 100";
+
+            let animationObj =  element.animate([
+                { strokeDashoffset: -strokeLength },
+                { strokeDashoffset: 0 }
+            ], {
+                duration: randomBetween(750, 2000), 
+                delay: randomBetween(0,2500), // Random delay up to 1s
+                iterations: Infinity,
+                easing: 'ease-in-out'
+                });
+
+            animationObj.pause();
+            branchesAnim.push(animationObj);
+           
+
+            
+        });
+        
+
+       
+            
+    });
+
+   
+        // Animate the polygons and circles
+    const animateMe = () => {  
+        polyAnim.forEach(element => {
+            element.play();
+        });
+        circleAnim.forEach(element => {
+            element.play();
+        });
+        branchesAnim.forEach(element => {
+            element.play();
+        });
+
+    }
+    
+    const stopMe = () => {
+        polyAnim.forEach(element => {
+            element.pause();
+        });
+        circleAnim.forEach(element => {
+            element.pause();
+        });
+        branchesAnim.forEach(element => {
+           
+            element.pause();
+        });
+    }
+        
+
+
+    document.querySelector(".animate").addEventListener("click", animateMe);
+    document.querySelector(".stop").addEventListener("click", stopMe);
+
+</script>
+</html>

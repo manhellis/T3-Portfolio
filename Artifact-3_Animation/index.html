@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations</title>
+</head>
+<style>
+    .anim_menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        width: 90%;
+    }
+    .anim_menu a{
+        padding: 1em;
+        margin: 1em;
+        border-radius: 5px;
+        border: none;
+        background: #fff;
+        color: #000;
+        font-size: 1.2em;
+        cursor: pointer;
+        transition: all 0.3s ease, color 0.3s ease;
+    }
+    .anim_menu a:hover{
+        background: #9c9c9c;
+        color: #fff;
+    }
+    .contentBlock{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+    }
+    .lightHeader:hover{
+        color: #9c9c9c;
+        transition: all 0.3s ease, color 0.3s ease;
+    }
+
+   
+
+    
+    </style>
+
+</style>
+<body>
+    <div class="contentBlock">
+        <h1 class="lightHeader">CSS and JS Animations</h1>
+
+        <div class="anim_menu">
+            <a href="./animate_Manh/index.html">Tree Animatiom</a>
+            <a href="./getBoudingBox/index.html">Day and night Santa</a>
+            <a href="./JS_anim/index.html">wave function</a>
+            <a href="./preloader_resize/index.html">preloader</a>
+        </div>
+        
+        
+    </div>
+    
+    
+    
+    
+</body>
+    
+
+
+</html>
