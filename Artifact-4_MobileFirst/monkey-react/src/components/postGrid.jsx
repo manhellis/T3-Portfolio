@@ -2,6 +2,8 @@
 import Card from "./card";
 import OpenAI from "openai";
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 const openai = new OpenAI({
     apiKey: import.meta.env.VITE_OPENAI_KEY,
@@ -33,7 +35,12 @@ const PostGrid = () => {
     }, []);
 
     if (!content) {
-        return <div className="postGrid">Loading..</div>;
+        return (
+            <div className="postGrid">
+                Loading..
+                <FontAwesomeIcon icon="fa-solid fa-spinner" spin />
+            </div>
+        );
     }
 
     // const json_content = JSON.parse(content);

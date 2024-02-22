@@ -4,7 +4,7 @@ import Header from "./components/header";
 import Branding from "./components/branding";
 import PostGrid from "./components/postgrid";
 import Footer from "./components/footer";
-import PromptCard from "./components/prompt";
+// import PromptCard from "./components/prompt";
 // import Card from "./components/card";
 // import cardContent from "/cardContent.json";
 function App() {
