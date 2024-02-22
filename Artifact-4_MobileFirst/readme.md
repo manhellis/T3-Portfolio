@@ -1,0 +1,1 @@
+maybe i should convert this page into a react app and setup openai prompt -> card content? simple api request and components

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mobile Web Final</title>
+        <link rel="stylesheet" href="styles.css" />
+
+
+    </head>
+    <body>
+        <header>
+            <div id="branding">
+                <img src="./imgs/monkey.svg" alt="monkey logo">
+                <i class="fa-solid fa-bars fa-lg"></i>
+            </div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#home">About</a>
+                <a href="#home">Portfolio</a>
+                <a href="#home">Business</a>
+                <a href="#home">Contact</a>
+            </nav>
+        </header>
+        <main>
+            <div class="media" >
+                <div class="textBlock">
+                    <h1>It's Just Monkey Business</h1>
+                    <p>
+                        There are many kinds of monkeys, all minding their own
+                        business
+                    </p>
+                </div>
+                <div class="imageBlock">
+                    <img src="./imgs/img_1.webp" alt="" />
+                </div>
+            </div>
+            <div class="postGrid">
+                <div class="card">
+                    <h2>Monkey Business 101</h2>
+                    <p>In Monkey Economics, bananas are the gold standard. Stock market? More like banana market!</p>
+                </div>
+                <div class="card">
+                    <h2>The Great Banana Heist</h2>
+                    <p>Two monkeys masterminded a banana heist. Their escape vehicle? A tricycle. The loot? Peels of laughter.</p>
+                </div>
+                <div class="card">
+                    <h2>Monkey Yoga Class</h2>
+                    <p>Monkeys tried yoga today. Pose of the day? Banana split. Downward dog? More like downward monkey!</p>
+                </div>
+                <div class="card">
+                    <h2>High-Flying Tails</h2>
+                    <p>Monkeys launched a space mission. Their spaceship? A giant banana. Mission goal? To find the cheese moon.</p>
+                </div>
+                <div class="card">
+                    <h2>The Tailor-Made Tail</h2>
+                    <p>Fashionista monkeys opened a boutique. Top seller? Curly tail extensions. Because straight tails are so last season.</p>
+                </div>
+                <div class="card">
+                    <h2>Monkey's Culinary Adventure</h2>
+                    <p>Chef Monkey's special dish? Banana stew. Secret ingredient? More bananas. Critics call it 'un-peel-lievably good!'</p>
+                </div>
+                <div class="card">
+                    <h2>The Monkey Detective</h2>
+                    <p>Sherlock Holmes? Meet Sherlock Hominoidea. His first case? The Mystery of the Missing Bananas.</p>
+                </div>
+                <div class="card">
+                    <h2>Monkeys' Mischief Night</h2>
+                    <p>During Mischief Night, monkeys swapped all zoo signs. The result? Utter confusion and laughing hyenas.</p>
+                </div>
+                <div class="card">
+                    <h2>The Great Monkey Debate</h2>
+                    <p>The hot topic in Monkey Parliament? Should banana peels be used for renewable energy. Opposition? Slippery when wet.</p>
+                </div>
+                <div class="card">
+                    <h2>Monkey's Day Out</h2>
+                    <p>A monkey visited the city. His review? Not enough trees, too many cars, and where are all the bananas?</p>
+                </div>
+                <div class="card">
+                    <h2>Monkey Superheroes</h2>
+                    <p>In a world of monkey superheroes, their power? Banana vision. Their weakness? Never-ending peel clean-up duty.</p>
+                </div>
+                
+            </div>
+        </main>
+        <footer>
+            <h3>Built By: Manh Ellis</h3>
+        </footer>
+    </body>
+    <script>
+        const menuBtn = document.querySelector(".fa-bars");
+        const nav = document.querySelector("nav");
+        menuBtn.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+    </script>
+</html>
