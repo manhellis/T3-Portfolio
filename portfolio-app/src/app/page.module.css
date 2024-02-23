@@ -23,13 +23,23 @@
     margin-top: 150px;
     padding: 4em;
     /* width: 100%; */
-    height: 800px;
+    /* height: 800px; */
     display: inline-flex;
-    /* display: flex;
-    flex-direction: column;
+
+    flex-direction: row;
     align-items: flex-end;
-    justify-content: space-between; */
+    justify-content: space-between;
     grid-column: 1/ 13;
     text-align: end;
     border-radius: 45px;
+}
+.landingText {
+}
+.landingImage {
+}
+.image {
+    border-radius: 100%;
+    width: 415px;
+    height: 415px;
+    background-color: hsla(var(--champagne-pink), 0.59);
 }
