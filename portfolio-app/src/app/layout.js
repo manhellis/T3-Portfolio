@@ -2,10 +2,9 @@ import { Sometype_Mono } from "next/font/google";
 import "./reset.css";
 import "./globals.css";
 import Header from "./components/Header";
-
+import Stage from "./components/three/stage";
 const sometype = Sometype_Mono({ subsets: ["latin"] });
 // const plex_sans = IBM_Plex_Sans({ subsets: ["latin"] });
-
 
 export const metadata = {
     title: "Manh Portfolio",
@@ -18,6 +17,9 @@ export default function RootLayout({ children }) {
             <body className={sometype.className}>
                 <Header />
                 {children}
+                <div className="bg-three">
+                    <Stage />
+                </div>
             </body>
         </html>
     );
