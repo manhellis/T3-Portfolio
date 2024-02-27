@@ -1,9 +1,9 @@
 import Stage from "../components/three/stage";
-// import from "./page.css";
+import styles from "./project.module.css";
 const Page = () => {
     return (
-        <div>
-            <h1>Projects</h1>
+        <div className={styles.testContainer}>
+            <h1 className={styles.h1}>Projects</h1>
 
             
         </div>
