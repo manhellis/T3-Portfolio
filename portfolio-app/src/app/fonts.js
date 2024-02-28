@@ -8,5 +8,5 @@ export const Sometype = Sometype_Mono({
 export const plex_sans = IBM_Plex_Sans({
   subsets: ['latin'],
   display: 'swap',
-  weight: '400',
+  weight: ['100','200','300', '400','500','600', '700'],
 })

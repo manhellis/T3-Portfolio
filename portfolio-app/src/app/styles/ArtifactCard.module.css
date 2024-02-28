@@ -1,3 +1,49 @@
 .h1 {
-    color: red;
+    color: var(--raisin-black-base);
+    grid-column: 6/ 12;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    font-size: 38px;
+    text-align: right;
+    padding-top: 5px;
+}
+
+.description {
+    letter-spacing: 0.1em;
+    font-weight: 200;
+}
+.card {
+    min-width: 400px;
+    background-color: hsla(var(--champagne-pink), 0.34);
+    backdrop-filter: blur(14.5px);
+    /* grid-column:3/8 ; */
+    max-height: 460px;
+    border-radius: 45px;
+    display: grid;
+    grid-template-rows: 80% 20%;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+}
+.subHeader {
+    color: var(--raisin-black-base);
+    grid-row: 2/3;
+    width: calc(100% - 50px);
+    height: calc(100% - 50px);
+    margin-bottom: 10px;
+
+    /* padding:10px; */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-end;
+}
+.preview {
+    background-color: hsla(var(--ultra-violet), 0.34);
+    backdrop-filter: blur(14.5px);
+    width: calc(100% - 40px);
+    /* margin 20 ish */
+    height: calc(100% - 40px);
+    /* margin: 10px; */
+    border-radius: 25px;
 }

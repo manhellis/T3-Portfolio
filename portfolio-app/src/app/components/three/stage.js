@@ -163,7 +163,7 @@ export default function Stage() {
                     mipmapBlur
                 />
             </EffectComposer>
-            <Stats />
+            {/* <Stats /> */}
             <OrbitControls autoRotate />
         </Canvas>
     );
