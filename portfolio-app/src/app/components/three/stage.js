@@ -5,9 +5,13 @@ import { EffectComposer, N8AO, Bloom } from "@react-three/postprocessing";
 import { Stats } from "@react-three/drei";
 import * as THREE from "three";
 import { OrbitControls } from "@react-three/drei";
+// 5c577a
+// f5974e
+// potential new colors
 
-const baseColor = new THREE.Color("#5C577A"); // Blue, representing slower speed
-const maxSpeedColor = new THREE.Color("#F5974E"); // Red, representing higher speed
+//i use a not brand color for blue
+const baseColor = new THREE.Color("#918CC6"); // Blue, representing slower speed
+const maxSpeedColor = new THREE.Color("#f5974e"); // Red, representing higher speed
 
 const Circle = ({ orbitRadius, inclination, phase, speed, direction }) => {
     const ref = useRef();
@@ -15,8 +19,15 @@ const Circle = ({ orbitRadius, inclination, phase, speed, direction }) => {
     const materialRef = useRef(new THREE.MeshLambertMaterial());
 
     // Use the speed to influence the color of the sphere
-    const speedFactor = (speed - 0.1) / (1 - 0.6); // Normalize speed between 0.1 and 0.6 for color interpolation
-
+    const speedFactor = (speed - 0.1) / (1 - 0.2); // Normalize speed between 0.1 and 0.6 for color interpolation
+    // Dynamically update the color based on speed
+    const color = new THREE.Color().lerpColors(
+        baseColor,
+        maxSpeedColor,
+        speedFactor
+    );
+    materialRef.current.color = color;
+    materialRef.current.emissive = color;
     useFrame(() => {
         const t = (performance.now() / 1000) * speed + phase;
         const x = orbitRadius * Math.sin(inclination) * Math.cos(t) * direction;
@@ -24,13 +35,13 @@ const Circle = ({ orbitRadius, inclination, phase, speed, direction }) => {
         const z = orbitRadius * Math.cos(inclination);
         ref.current.position.set(x, y, z);
 
-        // Dynamically update the color based on speed
-        const color = new THREE.Color().lerpColors(
-            baseColor,
-            maxSpeedColor,
-            speedFactor
-        );
-        materialRef.current.color = color;
+        // // Dynamically update the color based on speed
+        // const color = new THREE.Color().lerpColors(
+        //     baseColor,
+        //     maxSpeedColor,
+        //     speedFactor
+        // );
+        // materialRef.current.color = color;
     });
 
     return (
