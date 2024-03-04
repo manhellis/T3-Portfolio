@@ -36,6 +36,9 @@
 .card:hover .preview{
     opacity: 0.9;
 }
+
+
+
 .subHeader {
     color: var(--raisin-black-base);
     grid-row: 2/3;
@@ -46,7 +49,7 @@
     /* padding:10px; */
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start; /* why is flex start better than start */
     justify-content: flex-end;
 }
 .preview {

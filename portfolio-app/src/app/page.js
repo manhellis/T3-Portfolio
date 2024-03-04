@@ -14,9 +14,9 @@ export default function Home() {
                     <h1 className={styles.h1}>Manh Ellis</h1>
                 </div>
             </div>
-            <ArtifactCard />
-            <ArtifactCard />
-            <ArtifactCard />
+                <ArtifactCard className={styles.ArtifactCard} />
+                <ArtifactCard className={styles.ArtifactCard} />
+                <ArtifactCard className={styles.ArtifactCard} />
         </main>
     );
 }
