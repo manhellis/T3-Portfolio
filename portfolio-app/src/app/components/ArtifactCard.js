@@ -1,11 +1,12 @@
 import styles from "../styles/ArtifactCard.module.css";
 import { plex_sans } from "../fonts";
-const ArtifactCard = ({ imgSrc }) => {
+import Link from "next/link";
+const ArtifactCard = ({ imgSrc, link}) => {
     const title = "Artifact 1";
     const description = "React, tailwind, ...";
     const imgStyle = { "background-image": ` url('${imgSrc}')` };
     return (
-        <div className={`${plex_sans.className} ${styles.card}`}>
+        <Link href={link} className={`${plex_sans.className} ${styles.card}`}>
             <div className={styles.preview} style={imgStyle}>
                 {/* <p> image</p> */}
                 {/* {imgSrc&& <img src={imgSrc} alt="artifact" />} */}
@@ -15,7 +16,7 @@ const ArtifactCard = ({ imgSrc }) => {
                 <p className={styles.description}>{description}</p>
                 <h1 className={styles.h1}>{title.toUpperCase()}</h1>
             </div>
-        </div>
+        </Link>
     );
 };
 export default ArtifactCard;

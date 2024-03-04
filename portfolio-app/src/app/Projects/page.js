@@ -13,7 +13,7 @@ const Page = () => {
             {/* <ArtifactCard className={styles.artifact}/>
             <ArtifactCard />
             <ArtifactCard /> */}
-            <ArtifactCard imgSrc={img1}/>
+            <ArtifactCard imgSrc={img1} link="/post"/>
             <ArtifactCard />
             <ArtifactCard />
             <ArtifactCard />
