@@ -17,6 +17,9 @@ export default function Home() {
             <ArtifactCard />
             <ArtifactCard />
             <ArtifactCard />
+            <div className={styles.spacer}>
+
+            </div>
         </main>
     );
 }

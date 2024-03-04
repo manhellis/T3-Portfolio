@@ -1,0 +1,40 @@
+.post {
+    display: contents;
+}
+
+.container {
+    /* display: contents; */
+    grid-column: 2 / 13;
+    background-color: hsla(var(--champagne-pink), 0.34);
+    backdrop-filter: blur(15px);
+    border-radius: 45px;
+
+}
+.description {
+    grid-column: 2 / 9;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    padding: 20px;
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--raisin-black-base);
+    margin-bottom: 200px;
+}
+.tabs {
+    grid-column: 1/ 2;
+    background-color: hsla(var(--champagne-pink), 0.34);
+    /* margin-right: -20px; */
+}
+.tabs p {
+    /* width: 100%; */
+    font-size: 20px;
+    padding: 1em;
+    /* margin-right: 2em; */
+    /* transform: rotate(180deg); */
+    /* writing-mode: vertical-rl; */
+    transition: color 0.3s ease;
+}
+.tabs p:hover {
+    color: var(--sandy-brown-base);
+    background-color: hsla(var(--champagne-pink), 0.50);
+}
