@@ -14,11 +14,11 @@ const Page = () => {
             <ArtifactCard />
             <ArtifactCard /> */}
             <ArtifactCard imgSrc={img1} link="/post"/>
+            {/* <ArtifactCard />
             <ArtifactCard />
             <ArtifactCard />
             <ArtifactCard />
-            <ArtifactCard />
-            <ArtifactCard />
+            <ArtifactCard /> */}
         </main>
     );
 };

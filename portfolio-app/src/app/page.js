@@ -15,13 +15,9 @@ export default function Home() {
                 </div>
             </div>
 
-                <ArtifactCard className={styles.ArtifactCard} />
-                <ArtifactCard className={styles.ArtifactCard} />
-                <ArtifactCard className={styles.ArtifactCard} />
-
-
-            </div>
-
+            <ArtifactCard className={styles.ArtifactCard} link="/page"/>
+            {/* <ArtifactCard className={styles.ArtifactCard} /> */}
+            {/* <ArtifactCard className={styles.ArtifactCard} /> */}
         </main>
     );
 }

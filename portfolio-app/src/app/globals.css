@@ -47,7 +47,8 @@ header {
     background-color: hsla(var(--champagne-pink), 0.31);
     backdrop-filter: blur(30px);
     border-radius:  0 0 35px 35px;
-    color: var(--raisin-black-base)
+    color: var(--raisin-black-base);
+    filter: drop-shadow(8px 7px 12px hsla(var(--ultra-violet-base),0.6));
 }
 nav ul {
     display: flex;
