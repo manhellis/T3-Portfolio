@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useMemo } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { EffectComposer, N8AO, Bloom } from "@react-three/postprocessing";
+import { EffectComposer, N8AO, Bloom, ToneMapping } from "@react-three/postprocessing";
 import { Stats } from "@react-three/drei";
 import * as THREE from "three";
 import { OrbitControls } from "@react-three/drei";
@@ -12,6 +12,7 @@ import { OrbitControls } from "@react-three/drei";
 //i use a not brand color for blue
 const baseColor = new THREE.Color("#918CC6"); // Blue, representing slower speed
 const maxSpeedColor = new THREE.Color("#f5974e"); // Red, representing higher speed
+THREE.ColorManagement.enabled = true // scaling performance r3f
 
 const Circle = ({ orbitRadius, inclination, phase, speed, direction }) => {
     const ref = useRef();
@@ -166,6 +167,7 @@ export default function Stage() {
             ))}
             {/* <InstancedCircles count={80} /> */}
             <EffectComposer>
+                <ToneMapping adaptive={true} />
                 <N8AO aoRadius={0.5} intensity={1} />
                 <Bloom
                     luminanceThreshold={1}
