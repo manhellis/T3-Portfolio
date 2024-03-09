@@ -1,0 +1,47 @@
+.h1 {
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: 0.11em;
+    grid-column: 1 / 4;
+    white-space: nowrap;
+    margin-left: 60px;
+    /* mix-blend-mode: exclusion; */ /*  would be cool to find a nice blend mode here */
+}
+
+.h2 {
+    /* font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-size: 32px; */
+    font-style: normal;
+    letter-spacing: 0.21em;
+    color: var(--raisin-black-base);
+    text-align: left;
+    grid-column: 1 / 6;
+    margin-left: 60px;
+
+}
+.sectionHeader {
+    grid-row: 5;
+}
+.leftP {
+    grid-column: 1/6;
+    grid-row:6;
+}
+.rightP {
+    grid-column: 6/13;
+    grid-row:6;
+}
+.title {
+    color: var(--raisin-black-base);
+    margin-left:40px;
+    text-align: left;
+    grid-column: span 12;
+    padding: 200px 0;
+}
+.image {
+    border-radius: 100%;
+    width: 415px;
+    height: 415px;
+    background-color: hsla(var(--champagne-pink), 0.59);
+    grid-column: 8 / 12;
+}

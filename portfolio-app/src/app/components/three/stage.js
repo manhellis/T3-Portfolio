@@ -44,12 +44,15 @@ const Circle = ({ orbitRadius, inclination, phase, speed, direction }) => {
         // );
         // materialRef.current.color = color;
     });
-
+    const sphereGeo = new THREE.SphereGeometry(0.5, 32, 32);
     return (
-        <mesh ref={ref} material={materialRef.current} castShadow receiveShadow>
-            <sphereGeometry args={[0.5, 32, 32]} />
-        </mesh>
+        <instancedMesh ref={ref} args={[sphereGeo, materialRef.current, 1]}/>
     );
+    // return (
+    //     <mesh ref={ref} material={materialRef.current} castShadow receiveShadow>
+    //         <sphereGeometry args={[0.5, 32, 32]} />
+    //     </mesh>
+    // );
 };
 
 const generateCircles = (count) => {
@@ -176,7 +179,7 @@ export default function Stage() {
                     mipmapBlur
                 />
             </EffectComposer>
-            {/* <Stats /> */}
+            <Stats />
             <OrbitControls autoRotate />
         </Canvas>
     );
