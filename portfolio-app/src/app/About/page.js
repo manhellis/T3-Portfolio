@@ -2,12 +2,18 @@ import styles from "./page.module.css";
 const Page = () => {
     return (
         <main>
-            <h1 className={styles.h1}>About Me</h1>
-            <h2 className={styles.h2}>
-                As a front-end developer, I'm driven to create digital
-                experiences that resonate with meaning and purpose
-            </h2>
-            <div className={styles.image}></div>
+            <div className={styles.titleCard}>
+                <h1 className={styles.title}>About Me</h1>
+                <h2 className={styles.h2}>
+                    As a front-end developer, I'm driven to create digital
+                    experiences that resonate with meaning and purpose
+                </h2>
+                
+            </div>
+<div className={styles.imageContainer}>
+    <div className={styles.image}></div>
+</div>
+            
 
             <h1 className={styles.h1}>What Drives Me?</h1>
             <h2 className={styles.sectionHeader}>Personal</h2>
@@ -30,7 +36,10 @@ const Page = () => {
                 audience.
             </p>
             <h1 className={styles.h1}>What Differentiates me?</h1>
-            <div className={styles.image}></div>
+            <div className={styles.imageContainerTwo}>
+    <div className={styles.image}></div>
+</div>
+            
         </main>
     );
 };

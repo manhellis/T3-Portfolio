@@ -15,9 +15,37 @@ export default function Home() {
                 </div>
             </div>
 
-            <ArtifactCard className={styles.ArtifactCard} link="/page"/>
-            {/* <ArtifactCard className={styles.ArtifactCard} /> */}
-            {/* <ArtifactCard className={styles.ArtifactCard} /> */}
+            <ArtifactCard
+                imgSrc={'https://picsum.photos/400/330'}
+                title="Snake Game"
+                description="First Steps of JS"
+                link="Projects/snake"
+            />
+            <ArtifactCard
+                imgSrc={
+                    "https://media.newyorker.com/photos/59095bb86552fa0be682d9d0/master/pass/Monkey-Selfie.jpg"
+                }
+                title="Artifact 2"
+                description="APIs, React and Mobile Layout"
+                link="Projects/monkey"
+            />
+            <ArtifactCard
+                imgSrc={
+                    "https://media.newyorker.com/photos/59095bb86552fa0be682d9d0/master/pass/Monkey-Selfie.jpg"
+                }
+                title="Artifact 3"
+                description="Cows and threejs"
+                link="Projects/farm"
+            />
+            
+            <ArtifactCard
+                imgSrc={
+                    "https://media.newyorker.com/photos/59095bb86552fa0be682d9d0/master/pass/Monkey-Selfie.jpg"
+                }
+                title="Artifact 4"
+                description="Animations"
+                link="Projects/animation"
+            />
         </main>
     );
 }

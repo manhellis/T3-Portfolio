@@ -3,8 +3,9 @@ import "./reset.css";
 import "./globals.css";
 import Header from "./components/Header";
 import Stage from "./components/three/stage";
-const sometype = Sometype_Mono({ subsets: ["latin"] });
+// const sometype = Sometype_Mono({ subsets: ["latin"] });
 // const plex_sans = IBM_Plex_Sans({ subsets: ["latin"] });
+import { Sometype, plex_sans } from "./fonts";
 
 export const metadata = {
     title: "Manh Portfolio",
@@ -13,8 +14,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en">
-            <body className={sometype.className}>
+        <html lang="en" className={`${Sometype.variable} ${plex_sans.variable}`}>
+            <body>
                 <Header />
                 {children}
                 <div className="bg-three">

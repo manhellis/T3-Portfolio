@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
-
+import { Sometype } from "../fonts";
 const Header = () => {
     return (
         <header>
@@ -11,7 +11,7 @@ const Header = () => {
             <nav>
                 <ul>
                     <li>
-                        <Link href="/Projects">Projects</Link>
+                        <Link href="/Projects" className={Sometype}>Projects</Link>
                     </li>
                     <li>
                         <Link href="/About">About</Link>

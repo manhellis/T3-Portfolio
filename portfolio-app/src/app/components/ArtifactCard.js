@@ -14,9 +14,10 @@ const ArtifactCard = ({ imgSrc, link, title, description}) => {
             </div>
             <div className={styles.subHeader}>
                 <p className={styles.description}>{description}</p>
-                <h1 className={styles.h1}>{title.toUpperCase()}</h1>
+                <h1 className={styles.h1}>{title && title.toUpperCase()}</h1>
             </div>
         </Link>
     );
 };
 export default ArtifactCard;
+
