@@ -1,9 +1,9 @@
 import styles from "../styles/ArtifactCard.module.css";
 import { plex_sans } from "../fonts";
 import Link from "next/link";
-const ArtifactCard = ({ imgSrc, link}) => {
-    const title = "Artifact 1";
-    const description = "React, tailwind, ...";
+const ArtifactCard = ({ imgSrc, link, title, description}) => {
+    // const title = "Artifact 1";
+    // const description = "React, tailwind, ...";
     const imgStyle = { "background-image": ` url('${imgSrc}')` };
     return (
         <Link href={link} className={`${plex_sans.className} ${styles.card}`}>

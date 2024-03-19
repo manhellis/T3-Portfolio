@@ -23,7 +23,6 @@
 }
 .landing {
     background-color: hsla(var(--champagne-pink), 0.34);
-    /* background-image: url('./noise.svg'); */
     /* background-color: linear-gradient(
         to right bottom,
         hsla(var(--champagne-pink), 1) hsla(var(--champagne-pink), 1)

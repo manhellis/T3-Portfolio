@@ -61,5 +61,6 @@
     /* margin: 10px; */
     border-radius: 25px;
     opacity: 0.8;
-    transition: all 0.15s ease-in-out
+    transition: all 0.15s ease-in-out;
+    object-fit: cover;
 }
