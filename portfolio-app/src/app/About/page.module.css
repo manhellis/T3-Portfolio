@@ -50,7 +50,7 @@
 }
 .sectionHeaderRightTwo {
     grid-row: 8;
-    grid-column: 6;
+    grid-column: 6/10;
 }
 .leftP, .rightP,  .rightPTwo {
     font-family: var(--font-plex-sans);

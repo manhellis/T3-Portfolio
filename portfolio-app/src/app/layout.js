@@ -1,7 +1,7 @@
 import { Sometype_Mono } from "next/font/google";
 import "./reset.css";
 import "./globals.css";
-import Header from "./components/Header";
+import Header from "./components/header";
 import Stage from "./components/three/stage";
 // const sometype = Sometype_Mono({ subsets: ["latin"] });
 // const plex_sans = IBM_Plex_Sans({ subsets: ["latin"] });

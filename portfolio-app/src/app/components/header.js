@@ -17,8 +17,11 @@ const Header = () => {
                         <Link href="/About">About</Link>
                     </li>
                     <li>
-                        <Link href="/Contact">Contact</Link>
+                        <a class="mailto" href="mailto:manh@manhellis.com">Contact</a>
                     </li>
+                    {/* <li>
+                        // <Link href="/Contact">Contact</Link>
+                    </li> */}
                 </ul>
             </nav>
         </header>
