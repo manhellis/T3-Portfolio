@@ -55,6 +55,7 @@
     width: 415px;
     height: 415px;
     background-color: hsla(var(--champagne-pink), 0.59);
+    backdrop-filter: blur(15px);
 }
 .spacer {
     padding-bottom: 200px;

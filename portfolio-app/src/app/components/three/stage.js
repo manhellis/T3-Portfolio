@@ -180,7 +180,7 @@ export default function Stage() {
                 />
             </EffectComposer>
             <Stats />
-            <OrbitControls autoRotate />
+            <OrbitControls autoRotate autoRotateSpeed={0.2} enableZoom={false} enablePan={false} enableRotate={false} />
         </Canvas>
     );
 }

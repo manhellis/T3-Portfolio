@@ -4,20 +4,20 @@ const Page = () => {
         <main>
             <div className={styles.titleCard}>
                 <h1 className={styles.title}>About Me</h1>
-                <h2 className={styles.h2}>
-                    As a front-end developer, I'm driven to create digital
-                    experiences that resonate with meaning and purpose
-                </h2>
-                
+                <div className={styles.aboutBox}>
+                    <h2 className={styles.h2}>
+                        As a front-end developer, I'm driven to create digital
+                        experiences that resonate with meaning and purpose
+                    </h2>
+                </div>
             </div>
-<div className={styles.imageContainer}>
-    <div className={styles.image}></div>
-</div>
-            
+            <div className={styles.imageContainer}>
+                <div className={styles.image}></div>
+            </div>
 
             <h1 className={styles.h1}>What Drives Me?</h1>
-            <h2 className={styles.sectionHeader}>Personal</h2>
-            <h2 className={styles.sectionHeader}>Career</h2>
+            <h2 className={styles.sectionHeaderLeft}>Personal</h2>
+            <h2 className={styles.sectionHeaderRight}>Career</h2>
             <p className={styles.leftP}>
                 As a transracial international adoptee, growing up in the
                 digital age has profoundly shaped my appreciation for the
@@ -36,10 +36,20 @@ const Page = () => {
                 audience.
             </p>
             <h1 className={styles.h1}>What Differentiates me?</h1>
-            <div className={styles.imageContainerTwo}>
-    <div className={styles.image}></div>
-</div>
-            
+            <h2 className={styles.sectionHeaderRightTwo}>Work Life Balance</h2>
+            <object data="/logo.svg" type="image/svg+xml" className={styles.logo}></object>
+            <p className={styles.rightPTwo}>
+                My Personal projects with climbing related web apps will
+                demonstrate my desire to mix professional experience with my
+                life. It demonstrates my ability to create and complete goals in
+                which I want to create a website. I want to work with meaningful
+                groups such as nonprofits or high reach organizations to make
+                content or sites for them that deliver meaning that matches my
+                mission and also display my practical working skills.
+            </p>
+            {/* <div className={styles.imageContainerTwo}>
+                <div className={styles.image}></div>
+            </div> */}
         </main>
     );
 };
