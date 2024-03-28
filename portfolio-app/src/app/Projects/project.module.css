@@ -25,3 +25,8 @@
     grid-column: span 12;
     padding: 200px 0;
 }
+@media (max-width: 1024px){
+    .title{
+        grid-column: span 8;
+    }
+}

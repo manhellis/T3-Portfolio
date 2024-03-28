@@ -2,12 +2,19 @@
     font-size: 72px;
     font-weight: 700;
     letter-spacing: 0.11em;
-    grid-column: 1 / 4;
+    /* grid-column: 1 / 4; */
     white-space: nowrap;
     margin-left: 60px;
     /* mix-blend-mode: exclusion; */ /*  would be cool to find a nice blend mode here */
 }
-
+.drive {
+    grid-column: 1/4;
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: 0.11em;
+    /* white-space: nowrap; */
+    margin-left: 60px;
+}
 .h2 {
     /* font-family: "IBM Plex Sans", sans-serif; */
     font-family: var(--font-plex-sans);
@@ -20,9 +27,11 @@
     margin-left: 60px;
     grid-row: 3 / 4;
 }
-.sectionHeader {
+.sectionHeaderLeft,
+.sectionHeaderRight {
     grid-row: 5;
 }
+/* .sectionHeaderLeft */
 .leftP {
     grid-column: 1/6;
     grid-row: 6;
@@ -40,8 +49,8 @@
     margin-left: 60px;
     margin-top: 200px;
 }
-.titleCard{
-    margin-top:200px;
+.titleCard {
+    margin-top: 200px;
     margin-bottom: 150px;
     display: contents;
 }
@@ -50,16 +59,19 @@
     border-radius: 100%;
     width: 415px;
     height: 415px;
-    background-color: hsla(var(--champagne-pink), 0.59); 
+    background-color: hsla(var(--champagne-pink), 0.59);
     /* padding-top: 200px; */
     /* margin: 100px 50px; */
 }
 .imageContainer {
     background-color: hsla(var(--champagne-pink), 0.2);
-    grid-column: 5 / 12;
+    grid-column: 6 / 13;
     grid-row: 2/4;
-    padding: 100px 50px 50px 100px;
+    padding: 100px;
     border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .imageContainerTwo {
     background-color: hsla(var(--champagne-pink), 0.2);
@@ -67,4 +79,37 @@
     grid-row: 7/8;
     padding: 100px 50px 50px 100px;
     border-radius: 35px;
+}
+@media (max-width: 1024px) {
+    .imageContainer {
+        grid-row: 4/5;
+        grid-column: 1/9;
+        padding: 100px;
+    }
+    .h1 {
+        grid-row: 5/6;
+    }
+    .sectionHeaderLeft {
+        grid-row: 6;
+    }
+    .leftP {
+        grid-column: 1/9;
+        grid-row: 7;
+    }
+
+    .sectionHeaderRight {
+        grid-row: 8;
+    }
+    .rightP {
+        grid-column: 1/9;
+        grid-row: 9;
+    }
+    .imageContainerTwo {
+        grid-row: 10/11;
+        grid-column: 1/9;
+        padding: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

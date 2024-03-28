@@ -6,6 +6,7 @@ import Stage from "./components/three/stage";
 // const sometype = Sometype_Mono({ subsets: ["latin"] });
 // const plex_sans = IBM_Plex_Sans({ subsets: ["latin"] });
 import { Sometype, plex_sans } from "./fonts";
+import Footer from "./components/Footer";
 
 export const metadata = {
     title: "Manh Portfolio",
@@ -18,8 +19,9 @@ export default function RootLayout({ children }) {
             <body>
                 <Header />
                 {children}
+                <Footer />
                 <div className="bg-three">
-                    <Stage />
+                    {/* <Stage /> */}
                 </div>
             </body>
         </html>

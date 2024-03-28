@@ -15,9 +15,9 @@ const Page = () => {
 </div>
             
 
-            <h1 className={styles.h1}>What Drives Me?</h1>
-            <h2 className={styles.sectionHeader}>Personal</h2>
-            <h2 className={styles.sectionHeader}>Career</h2>
+            <h1 className={styles.drive}>What Drives Me?</h1>
+            <h2 className={styles.sectionHeaderLeft}>Personal</h2>
+            <h2 className={styles.sectionHeaderRight}>Career</h2>
             <p className={styles.leftP}>
                 As a transracial international adoptee, growing up in the
                 digital age has profoundly shaped my appreciation for the
@@ -35,7 +35,7 @@ const Page = () => {
                 voices to those who need to share important message with their
                 audience.
             </p>
-            <h1 className={styles.h1}>What Differentiates me?</h1>
+            {/* <h1 className={styles.h1}>What Differentiates me?</h1> */}
             <div className={styles.imageContainerTwo}>
     <div className={styles.image}></div>
 </div>

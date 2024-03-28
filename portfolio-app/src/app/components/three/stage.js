@@ -13,7 +13,7 @@ import { OrbitControls } from "@react-three/drei";
 const baseColor = new THREE.Color("#918CC6"); // Blue, representing slower speed
 const maxSpeedColor = new THREE.Color("#f5974e"); // Red, representing higher speed
 THREE.ColorManagement.enabled = true // scaling performance r3f
-
+// should rewrite this entire canvas, first create meshes by color, then create instances of each mesh color type, then append instanced gemoetries together?
 const Circle = ({ orbitRadius, inclination, phase, speed, direction }) => {
     const ref = useRef();
     // Create a MeshLambertMaterial ref
@@ -179,7 +179,7 @@ export default function Stage() {
                     mipmapBlur
                 />
             </EffectComposer>
-            <Stats />
+            {/* <Stats /> */}
             <OrbitControls autoRotate />
         </Canvas>
     );
