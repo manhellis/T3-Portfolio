@@ -15,7 +15,9 @@ const Page = () => {
                 <div className={styles.image}></div>
             </div>
 
-            <h1 className={styles.h1}>What Drives Me?</h1>
+
+            <h1 className={styles.drive}>What Drives Me?</h1>
+
             <h2 className={styles.sectionHeaderLeft}>Personal</h2>
             <h2 className={styles.sectionHeaderRight}>Career</h2>
             <p className={styles.leftP}>
@@ -35,6 +37,7 @@ const Page = () => {
                 voices to those who need to share important message with their
                 audience.
             </p>
+
             <h1 className={styles.h1}>What Differentiates me?</h1>
             <h2 className={styles.sectionHeaderRightTwo}>Work Life Balance</h2>
             <object data="/logo.svg" type="image/svg+xml" className={styles.logo}></object>
@@ -50,6 +53,7 @@ const Page = () => {
             {/* <div className={styles.imageContainerTwo}>
                 <div className={styles.image}></div>
             </div> */}
+
         </main>
     );
 };

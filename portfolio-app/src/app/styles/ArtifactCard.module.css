@@ -59,5 +59,16 @@
     border-radius: 25px;
     opacity: 0.8;
     transition: all 0.15s ease-in-out;
+
     background-size: cover;
+
+    object-fit: cover;
+    background-repeat: no-repeat;
+
+}
+
+@media (max-width: 1024px){
+    .card{
+        grid-column: 1/9;
+    }
 }
