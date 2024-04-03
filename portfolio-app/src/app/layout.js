@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
                 {children}
                 <Footer />
                 <div className="bg-three">
-                    {/* <Stage /> */}
+                    <Stage />
                 </div>
             </body>
         </html>

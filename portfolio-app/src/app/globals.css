@@ -48,7 +48,7 @@ header {
     color: var(--raisin-black-base);
     filter: drop-shadow(8px 7px 12px hsla(var(--ultra-violet-base), 0.6));
 }
-nav ul {
+.main-navs ul {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -73,6 +73,11 @@ a:link {
 a:hover {
     color: var(--sandy-brown-base);
 }
+
+.mobile-nav {
+    display: none;
+}
+
 .homeIcon {
     width: 24px;
 }
@@ -88,6 +93,10 @@ a:hover {
 .close {
     display: none;
 }
+
+/* header modal right */
+
+
 
 /* footer*/
 
@@ -147,8 +156,11 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-x: hidden;
 }
-
+.hidden {
+    display: none;
+}
 /* Body */
 body {
     font-family: var(--font-sometype);
@@ -167,13 +179,7 @@ body {
 main {
     display: contents;
 }
-/* display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    margin: 0 40px;
-    grid-gap: 20px;
-    width: 100%;
-    max-width: 1280px; */
-/* width: 95vw; */
+
 
 /* canvas */
 .bg-three {
@@ -195,7 +201,11 @@ main {
     }
     /* nav to mobile nav */
     .main-nav {
-        display: none;
+        /* display: none; */
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
     .main-nav ul {
         flex-direction: column;
@@ -205,7 +215,7 @@ main {
         display: block;
     }
     .active {
-        display: block;
+        display: flex;
     }
     .close {
         display: block;
@@ -228,6 +238,7 @@ main {
 @media (max-width: 1024px) {
     body {
         grid-template-columns: repeat(8, 1fr);
+        width: 100%;
     }
     header {
         grid-column: 1 / 9;
@@ -237,8 +248,8 @@ main {
     }
 }
 
-@media (max-width: 1280px) {
+/* @media (max-width: 1280px) {
     body {
-        width: 100%;
+        width: 100dvw;
     }
-}
+} */

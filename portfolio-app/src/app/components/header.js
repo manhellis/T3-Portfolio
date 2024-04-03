@@ -18,14 +18,14 @@ const Header = () => {
             </Link>
 
             <button
-                className={`icon bars ${isNavVisible ? "" : "active"}`}
+                className={`icon ${isNavVisible ? "hidden" : "bars active"}`}
                 aria-label="Toggle menu"
                 onClick={menuToggle}
             >
                 <FontAwesomeIcon icon={faBars} />
             </button>
 
-            <nav className={`main-nav ${isNavVisible ? "active" : ""}`}>
+            <nav className={`main-nav `}>
                 <button
                     className="icon close"
                     aria-label="Close menu"
@@ -41,7 +41,27 @@ const Header = () => {
                         <Link href="/About">About</Link>
                     </li>
                     <li>
-                        <a className="mailto" href="mailto:manh@manhellis.com">Contact</a>
+                        <a className="mailto" href="mailto:manh@manhellis.com">
+                            Contact
+                        </a>
+                    </li>
+                    {/* <li>
+                        // <Link href="/Contact">Contact</Link>
+                    </li> */}
+                </ul>
+            </nav>
+            <nav className={`mobile-nav ${isNavVisible ? "active" : "hidden"}`}>
+                <ul>
+                    <li>
+                        <Link href="/Projects">MOBILE PROJECT</Link>
+                    </li>
+                    <li>
+                        <Link href="/About">MOBILE About</Link>
+                    </li>
+                    <li>
+                        <a className="mailto" href="mailto:manh@manhellis.com">
+                            Contact
+                        </a>
                     </li>
                     {/* <li>
                         // <Link href="/Contact">Contact</Link>
