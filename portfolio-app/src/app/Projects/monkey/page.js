@@ -2,6 +2,7 @@
 import styles from "../project.module.css";
 import post from "../../styles/post.module.css";
 import { useState } from "react";
+import Link from "next/link";
 
 const Page = ({ params }) => {
     const [tab, setTab] = useState(1);
@@ -20,7 +21,7 @@ const Page = ({ params }) => {
             <p>Load Card data from json</p>
             <p>Fetch API data with prompt</p>
             <p>UseEffect Response and mapping results</p>
-            <h2 className={post.h2}>Vanilla to React:</h2>
+            <h2 className={post.h1}>Vanilla to React:</h2>
             <p>
                 The layout of the single page app is simple, I build a Header
                 and Footer component that could be reused if the app was
@@ -33,28 +34,23 @@ const Page = ({ params }) => {
 
     const tabContent2 = () => (
         <div className={post.description}>
-            <h2 className={post.h2}>Loading Cards from Json:</h2>
+            <h2 className={post.h1}>Loading Cards from Json:</h2>
             <p>
                 A json file with data from the original site was created and
                 loaded as an object, passed through the map function to create
                 the post grid.
             </p>
-            <h2 className={post.h2}>Fetch OpenAI API:</h2>
+            <h2 className={post.h1}>Fetch OpenAI API:</h2>
             <p>
                 Implemented the OpenAI API to generate new content, setting up
                 an API object and an await function to fetch monkey jokes.
             </p>
-            <h2 className={post.h2}>UseEffect and Finishing Touches:</h2>
+            <h2 className={post.h1}>UseEffect and Finishing Touches:</h2>
             <p>
                 JSON.parse was used for the response when setting the state
                 value, displaying a loading text until the content loads and the
                 fetched data is mapped to card components.
             </p>
-        </div>
-    );
-
-    const tabContent3 = () => (
-        <div className={post.description}>
             <h1 className={post.h1}>Conclusion:</h1>
             <p>
                 This project showcases porting a site to React, using AI via an
@@ -65,6 +61,8 @@ const Page = ({ params }) => {
             </p>
         </div>
     );
+
+    
 
     return (
         <div className={post.post}>
@@ -77,12 +75,14 @@ const Page = ({ params }) => {
                 <div className={post.tabs}>
                     <button onClick={handleTab(1)}>Narrative</button>
                     <button onClick={handleTab(2)}>Steps</button>
-                    <button onClick={handleTab(3)}>Conclusion</button>
                 </div>
                 <div className={post.canvas}></div>
                 {tab === 1 && tabContent1()}
                 {tab === 2 && tabContent2()}
-                {tab === 3 && tabContent3()}
+            </div>
+            <div className={post.container2}>
+            
+                <Link className={post.link} rel="noopener noreferrer"  target="_blank" href="https://monkey-react.vercel.app/">Visit Site </Link>
             </div>
         </div>
     );

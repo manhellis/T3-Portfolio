@@ -125,7 +125,7 @@ const Page = ({ params }) => {
         <div className={post.post}>
             <div className={styles.title}>
                 <h1 className={styles.h1}>Snake Game</h1>
-                <h2>Web Developer</h2>
+                <h2>First Skills</h2>
             </div>
 
             <div className={post.container}>
@@ -141,6 +141,12 @@ const Page = ({ params }) => {
                 <div>
                     <img></img>
                 </div>
+            </div>
+
+            <div className={post.container}>
+                <iframe className={post.iframe} src="/snake.html">
+
+                </iframe>
             </div>
         </div>
     );

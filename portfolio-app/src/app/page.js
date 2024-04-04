@@ -16,14 +16,15 @@ export default function Home() {
             </div>
 
             <ArtifactCard
-                imgSrc={'https://picsum.photos/400/330'}
+                imgSrc={"/snake.webp"}
                 title="Snake Game"
                 description="First Steps of JS"
                 link="Projects/snake"
             />
             <ArtifactCard
                 imgSrc={
-                    "https://media.newyorker.com/photos/59095bb86552fa0be682d9d0/master/pass/Monkey-Selfie.jpg"
+                    "/Monkey-Selfie.webp"
+                   
                 }
                 title="Artifact 2"
                 description="APIs, React and Mobile Layout"
@@ -31,7 +32,7 @@ export default function Home() {
             />
             <ArtifactCard
                 imgSrc={
-                    "https://media.newyorker.com/photos/59095bb86552fa0be682d9d0/master/pass/Monkey-Selfie.jpg"
+                    "/cow.webp"
                 }
                 title="Artifact 3"
                 description="Cows and threejs"
@@ -40,10 +41,10 @@ export default function Home() {
             
             <ArtifactCard
                 imgSrc={
-                    "https://media.newyorker.com/photos/59095bb86552fa0be682d9d0/master/pass/Monkey-Selfie.jpg"
+                    "/anim.jpg"
                 }
                 title="Artifact 4"
-                description="Animations"
+                description="CSS Animations"
                 link="Projects/animation"
             />
         </main>

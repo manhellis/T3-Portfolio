@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Header from "./components/header";
 import Branding from "./components/branding";
-import PostGrid from "./components/postgrid";
+import PostGrid from "./components/postGrid";
 import Footer from "./components/footer";
 // import PromptCard from "./components/prompt";
 // import Card from "./components/card";

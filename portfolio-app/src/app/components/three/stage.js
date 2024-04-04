@@ -1,9 +1,15 @@
 "use client";
 import { useRef, useMemo } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { EffectComposer, N8AO, Bloom, ToneMapping } from "@react-three/postprocessing";
+import { Canvas, useFrame} from "@react-three/fiber";
+import {
+    EffectComposer,
+    N8AO,
+    Bloom,
+    ToneMapping,
+} from "@react-three/postprocessing";
 import { Stats } from "@react-three/drei";
 import * as THREE from "three";
+import { a, useSpring } from "@react-spring/three";
 import { OrbitControls } from "@react-three/drei";
 // 5c577a
 // f5974e
@@ -12,7 +18,7 @@ import { OrbitControls } from "@react-three/drei";
 //i use a not brand color for blue
 const baseColor = new THREE.Color("#918CC6"); // Blue, representing slower speed
 const maxSpeedColor = new THREE.Color("#f5974e"); // Red, representing higher speed
-THREE.ColorManagement.enabled = true // scaling performance r3f
+THREE.ColorManagement.enabled = true; // scaling performance r3f
 // should rewrite this entire canvas, first create meshes by color, then create instances of each mesh color type, then append instanced gemoetries together?
 const Circle = ({ orbitRadius, inclination, phase, speed, direction }) => {
     const ref = useRef();
@@ -20,7 +26,7 @@ const Circle = ({ orbitRadius, inclination, phase, speed, direction }) => {
     const materialRef = useRef(new THREE.MeshLambertMaterial());
 
     // Use the speed to influence the color of the sphere
-    const speedFactor = (speed - 0.1) / (1 - 0.2); // Normalize speed between 0.1 and 0.6 for color interpolation
+    const speedFactor = (speed) * 7; // Normalize speed 
     // Dynamically update the color based on speed
     const color = new THREE.Color().lerpColors(
         baseColor,
@@ -44,24 +50,65 @@ const Circle = ({ orbitRadius, inclination, phase, speed, direction }) => {
         // );
         // materialRef.current.color = color;
     });
-    const sphereGeo = new THREE.SphereGeometry(0.5, 32, 32);
-    return (
-        <instancedMesh ref={ref} args={[sphereGeo, materialRef.current, 1]}/>
-    );
+    // const sphereGeo = new THREE.SphereGeometry(0.5, 32, 32);
     // return (
-    //     <mesh ref={ref} material={materialRef.current} castShadow receiveShadow>
-    //         <sphereGeometry args={[0.5, 32, 32]} />
-    //     </mesh>
+    //     <instancedMesh ref={ref} args={[sphereGeo, materialRef.current, 1]}/>
     // );
+    return (
+        <mesh ref={ref} material={materialRef.current} castShadow receiveShadow>
+            <sphereGeometry args={[0.5, 32, 32]} />
+        </mesh>
+    );
 };
+// const Circle = ({ orbitRadius, inclination, phase, speed, direction }) => {
+//     const ref = useRef();
 
+//     // Normalize speed between 0.1 and 1 for color interpolation
+//     const speedFactor = (speed - 0.1) / 0.9;
+
+//     // Calculate color based on speed
+//     const baseColor = new THREE.Color("skyblue");
+//     const maxSpeedColor = new THREE.Color("salmon");
+//     const color = baseColor.clone().lerp(maxSpeedColor, speedFactor);
+
+//     // Use spring animation for position
+//     const { pos } = useSpring({
+//         to: async (next, cancel) => {
+//             while (true) {
+//                 await next({
+//                     pos: [
+//                         Math.sin(performance.now() / 1000) *
+//                             orbitRadius *
+//                             direction,
+//                         Math.cos(performance.now() / 1000) *
+//                             orbitRadius *
+//                             direction,
+//                         0,
+//                     ],
+//                 });
+//             }
+//         },
+//         from: { pos: [0, 0, 0] },
+//         config: { mass: 1, tension: 180, friction: 12 },
+//         loop: { reverse: false },
+//     });
+
+    
+
+//     return (
+//         <a.mesh ref={ref} position={pos} castShadow receiveShadow>
+//             <sphereGeometry args={[0.5, 32, 32]} />
+//             <meshLambertMaterial color={color} emissive={color} />
+//         </a.mesh>
+//     );
+// };
 const generateCircles = (count) => {
     const circles = [];
     for (let i = 0; i < count; i++) {
         const orbitRadius = Math.random() * 9 + 1;
         const inclination = Math.random() * Math.PI;
         const phase = Math.random() * 2 * Math.PI;
-        const speed = Math.random() * 0.5 + 0.1; // Adjust the range as needed
+        const speed = Math.random() * 0.1; // Adjust the range as needed
         const direction = Math.random() > 0.5 ? 1 : -1;
         circles.push({ orbitRadius, inclination, phase, speed, direction });
     }
@@ -157,8 +204,6 @@ const generateCircles = (count) => {
 //     );
 // };
 
-
-
 export default function Stage() {
     const circles = useMemo(() => generateCircles(80), []);
     return (
@@ -179,8 +224,15 @@ export default function Stage() {
                     mipmapBlur
                 />
             </EffectComposer>
+
             {/* <Stats /> */}
-            <OrbitControls autoRotate />
+            <OrbitControls
+                autoRotate
+                autoRotateSpeed={0.001}
+                enableZoom={false}
+                enablePan={false}
+                enableRotate={false}
+            />
         </Canvas>
     );
 }

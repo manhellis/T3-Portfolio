@@ -28,16 +28,13 @@
     align-items: center;
     transition: all 0.15s ease-in-out;
 }
-.card:hover{
+.card:hover {
     transform: scale(1.02);
     /* opacity: 0.9; */
-
 }
-.card:hover .preview{
+.card:hover .preview {
     opacity: 0.9;
 }
-
-
 
 .subHeader {
     color: var(--raisin-black-base);
@@ -62,12 +59,21 @@
     border-radius: 25px;
     opacity: 0.8;
     transition: all 0.15s ease-in-out;
+
+    background-size: cover;
+
     object-fit: cover;
     background-repeat: no-repeat;
+
 }
 
 @media (max-width: 1024px){
     .card{
-        grid-column: 1/9;
+        grid-column: span 4;
+    }
+}
+@media (max-width: 768px){
+    .card{
+        grid-column: span 8;
     }
 }

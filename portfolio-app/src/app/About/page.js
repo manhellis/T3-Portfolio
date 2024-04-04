@@ -8,12 +8,10 @@ const Page = () => {
                     As a front-end developer, I'm driven to create digital
                     experiences that resonate with meaning and purpose
                 </h2>
-                
             </div>
-<div className={styles.imageContainer}>
-    <div className={styles.image}></div>
-</div>
-            
+            <div className={styles.imageContainer}>
+                <div className={styles.image}></div>
+            </div>
 
             <h1 className={styles.drive}>What Drives Me?</h1>
             <h2 className={styles.sectionHeaderLeft}>Personal</h2>
@@ -35,11 +33,20 @@ const Page = () => {
                 voices to those who need to share important message with their
                 audience.
             </p>
-            {/* <h1 className={styles.h1}>What Differentiates me?</h1> */}
+            <h1 className={styles.diff}>What Differentiates me?</h1>
+            <h2 className={styles.sectionHeaderLeftTwo}>Life and Career</h2>
+            <p className={styles.rightPTwo}>
+                My Personal projects with climbing related web apps will
+                demonstrate my desire to mix professional experience with my
+                life. It demonstrates my ability to create and complete goals in
+                which I want to create a website. I want to work with meaningful
+                groups such as nonprofits or high reach organizations to make
+                content or sites for them that deliver meaning that matches my
+                mission and also display my practical working skills.
+            </p>
             <div className={styles.imageContainerTwo}>
-    <div className={styles.image}></div>
-</div>
-            
+                <img src="logo.svg" alt="Logo" />
+            </div>
         </main>
     );
 };
