@@ -1,7 +1,8 @@
+'use client';
 import Image from "next/image";
 import styles from "./page.module.css";
 import ArtifactCard from "./components/ArtifactCard";
-
+import { motion } from "framer-motion";
 export default function Home() {
     return (
         <main className={styles.main}>
@@ -14,35 +15,34 @@ export default function Home() {
                     <h1 className={styles.h1}>Manh Ellis</h1>
                 </div>
             </div>
+            {/* <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ ease: "easeInOut", duration: 0.5 }}
+            > */}
+                <ArtifactCard
+                    imgSrc={"/snake.webp"}
+                    title="Snake Game"
+                    description="First Steps of JS"
+                    link="Projects/snake"
+                />
+            {/* </motion.div> */}
 
             <ArtifactCard
-                imgSrc={"/snake.webp"}
-                title="Snake Game"
-                description="First Steps of JS"
-                link="Projects/snake"
-            />
-            <ArtifactCard
-                imgSrc={
-                    "/Monkey-Selfie.webp"
-                   
-                }
+                imgSrc={"/Monkey-Selfie.webp"}
                 title="Artifact 2"
                 description="APIs, React and Mobile Layout"
                 link="Projects/monkey"
             />
             <ArtifactCard
-                imgSrc={
-                    "/cow.webp"
-                }
+                imgSrc={"/cow.webp"}
                 title="Artifact 3"
                 description="Cows and threejs"
                 link="Projects/farm"
             />
-            
+
             <ArtifactCard
-                imgSrc={
-                    "/anim.jpg"
-                }
+                imgSrc={"/anim.jpg"}
                 title="Artifact 4"
                 description="CSS Animations"
                 link="Projects/animation"
