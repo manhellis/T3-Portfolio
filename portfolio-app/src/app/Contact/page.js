@@ -1,9 +1,16 @@
-
+import Contact from "../components/Contact";
+import styles from "./page.module.css";
 const Page = () => {
     return (
-        <div>
-            <h1>Contact</h1>
-        </div>
+        <>
+            <div className={styles.title}>
+                <h1 className={styles.h1}>Contact Me</h1>
+                <h2>Send me an email</h2>
+            </div>
+            <div className={styles.container}>
+                <Contact />
+            </div>
+        </>
     );
 };
 

@@ -1,0 +1,46 @@
+/* .contact {
+    background-color: hsla(var(--champagne-pink), 0.34);
+    backdrop-filter: blur(15px);
+    border-radius: 35px;
+} */
+.form {
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem 3rem;
+    padding: 1rem;
+    background-color: hsla(var(--champagne-pink), 0.6);
+}
+.input {
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--raisin-black-base);
+    background-color: hsla(var(--champagne-pink), 0.6);
+    width: 75%;
+}
+.textarea {
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--raisin-black-base);
+    background-color: hsla(var(--champagne-pink), 0.6);
+    width: 75%;
+}
+.submit {
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--raisin-black-base);
+    background-color: hsla(var(--champagne-pink), 0.6);
+    color: var(--raisin-black-base);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.submit:hover {
+    background-color: var(--raisin-black-base);
+    color: hsla(var(--champagne-pink), 0.6);
+}

@@ -23,10 +23,6 @@
 }
 .landing {
     background-color: hsla(var(--champagne-pink), 0.34);
-    /* background-color: linear-gradient(
-        to right bottom,
-        hsla(var(--champagne-pink), 1) hsla(var(--champagne-pink), 1)
-    ); */
     backdrop-filter: blur(15px);
     margin-top: 150px;
     margin-bottom: 150px;

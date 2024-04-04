@@ -38,7 +38,7 @@ header {
     padding: 20px 0;
     /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); */
     top: 0;
-
+    z-index: 100;
     grid-column: 1 / 13;
     /* width: 100%;; */
     padding: 20px;
@@ -48,7 +48,7 @@ header {
     color: var(--raisin-black-base);
     filter: drop-shadow(8px 7px 12px hsla(var(--ultra-violet-base), 0.6));
 }
-.main-navs ul {
+.main-nav ul {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -75,15 +75,67 @@ a:hover {
 }
 
 .mobile-nav {
-    display: none;
+    position: fixed; /* Or absolute, but fixed is generally better for full-screen */
+    top: 0;
+    left: -10%;
+    width: 110lvw; /* Full width */
+    height: 100vh; /* Full height */
+    z-index: 1000; /* Ensure it's above other content */
+    display: none; /* Hidden by default */
+    /* Add your background, padding, etc., below */
+    background-color: rgba(108, 108, 108, 0.8); /* Example background */
+    /* overflow-y: auto; Allows scrolling within the header if needed */
+    overflow: clip;
+    justify-content: center;
+    align-items: center;
+    /* backdrop-filter: blur(30px); */
+    grid-template-rows: 10% 80% 10%;
+    grid-template-columns: repeat(3, 1fr);
+    /* transition: all 0.5s ease-in-out; */
+}
+.mobile-nav .icon {
+    grid-row: 1;
+    grid-column: 3;
+    font-size: 2rem;
+    width: fit-content;
+    background: none;
+    justify-self: center;
+    transition: all 0.5s ease-in-out;
+    /* margin-right: 5rem; */
+}
+.mobile-nav .icon:hover {
+    color: var(--sandy-brown-base);
 }
 
+.mobile-nav ul {
+    grid-row: 2;
+    grid-column: 2;
+}
+.mobile-nav ul li a {
+    color: var(--sandy-brown-base);
+    padding: 1rem;
+    border: solid 1px var(--sandy-brown-base);
+    font-size: 2rem;
+}
+.mobile-nav ul li {
+    margin: 3rem 1rem;
+}
+.mobile-nav ul li a:visited,
+mobile-nav ul li a:link {
+    color: var(--sandy-brown-base);
+}
+.mobile-nav ul li a:hover {
+    color: var(--raisin-black-base);
+}
 .homeIcon {
     width: 24px;
 }
+.toggle {
+    display: none;
+}
 
 .bars {
-    display: none;
+    /* display: none; */
     color: var(--raisin-black-base);
     transition: color 0.3s ease;
 }
@@ -95,8 +147,6 @@ a:hover {
 }
 
 /* header modal right */
-
-
 
 /* footer*/
 
@@ -125,16 +175,21 @@ footer .links {
     margin: 1rem;
 }
 footer h2 {
-    font-family: var(--font-plex-sans);
+    /* font-family: var(--font-plex-sans); */
     font-size: 24px;
-    font-weight: 400;
+    font-weight: 500;
     /* letter-spacing: 0.21em; */
     color: hsla(var(--raisin-black-base), 0.6);
     text-align: center;
     margin: 1rem;
+    text-decoration: underline;
 }
 footer a {
     padding: 2rem;
+}
+footer a:hover {
+    color: var(--sandy-brown-base);
+
 }
 
 footer .phone {
@@ -151,7 +206,7 @@ footer .phone {
 }
 
 html {
-    width: 100%;
+    width: 100dvw;
     /* height: 100%; */
     display: flex;
     align-items: center;
@@ -167,11 +222,9 @@ body {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     margin: 0 20px;
-    /* margin: 0 auto; */
     grid-gap: 20px;
-    /* width: 100%; */
     max-width: 1280px;
-    /* width: 100%; */
+    
 }
 /* body::before{
     transform: rotate(90deg);
@@ -180,7 +233,6 @@ main {
     display: contents;
 }
 
-
 /* canvas */
 .bg-three {
     width: 100%;
@@ -188,8 +240,9 @@ main {
     /* grid-column: 1/13; */
     margin: 0 auto;
     z-index: -100;
-    position: absolute;
+    position: fixed;
     left: 0;
+    top:0;
 }
 
 /* media queries */
@@ -201,25 +254,26 @@ main {
     }
     /* nav to mobile nav */
     .main-nav {
-        /* display: none; */
-        /* display: flex; */
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+        display: none;
     }
+
     .main-nav ul {
         flex-direction: column;
     }
-
-    .bars {
+    .mobile-nav {
+        display: none;
+    }
+    /* .toggle {
         display: block;
-    }
+    } */
+
     .active {
-        display: flex;
+        display: grid;
     }
+    /*
     .close {
         display: block;
-    }
+    } */
     .active ul li {
         margin-bottom: 15px;
     }
@@ -234,6 +288,14 @@ main {
         ); /* Simplify grid further for small smartphones */
         margin: 0 20px; /* Optional: Adjust margins for smaller screens */
     }
+    footer .links {
+        flex-direction: column;
+        margin: 0;
+        
+    }
+    footer .links a {
+        padding: 10px;
+    }
 }
 @media (max-width: 1024px) {
     body {
@@ -247,9 +309,8 @@ main {
         grid-column: 1 / 9;
     }
 }
-
-/* @media (max-width: 1280px) {
+@media (min-width: 1280px) {
     body {
-        width: 100dvw;
+        min-width: 1280px;
     }
-} */
+}

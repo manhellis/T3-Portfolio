@@ -69,6 +69,11 @@
 
 @media (max-width: 1024px){
     .card{
-        grid-column: 1/9;
+        grid-column: span 4;
+    }
+}
+@media (max-width: 768px){
+    .card{
+        grid-column: span 8;
     }
 }
