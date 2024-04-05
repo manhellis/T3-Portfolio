@@ -1,3 +1,5 @@
+
+
 .post {
     display: contents;
 }
@@ -5,12 +7,13 @@
 .container {
     /* display: contents; */
     grid-column: 1 / 13;
-    background-color: hsla(var(--champagne-pink), 0.34);
+    background-color: hsla(var(--champagne-pink), 0.3);
     backdrop-filter: blur(15px);
     border-radius: 45px;
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(50px,100px) 1fr;
+    /* grid-template-rows: 1fr; */
     margin-bottom: 100px;
-
 }
 .container2 {
     grid-column: 1 / 13;
@@ -22,59 +25,142 @@
     align-items: center;
     margin-bottom: 200px;
     padding: 100px;
-
 }
 .link {
     padding: 20px;
     border-radius: 25px;
-    background-color: hsla(var(--champagne-pink), 0.60);
+    background-color: hsla(var(--champagne-pink), 0.6);
 }
 .link:hover {
-    color: var(--sandy-brown-base)
+    color: var(--sandy-brown-base);
 }
 .description {
-    grid-column: 2 / 9;
+    grid-column: 2/7;
+    grid-row: 1;
     font-family: "IBM Plex Sans", sans-serif;
     font-weight: 300;
-    padding: 20px 20px 20px 0px;
+    padding: 20px 20px 20px 1em;
     font-size: 20px;
     line-height: 1.5;
     color: var(--raisin-black-base);
+    background-color: var(--active-tab-color);
+    border-radius: 35px;
+    /* needs variety depending on tab */
 }
 .tabs {
     grid-column: 1/ 2;
     /* background-color: hsla(var(--champagne-pink), 0.34); */
     /* margin-right: -20px; */
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: space-evenly;
-    border-radius: inherit;
+    border-radius: inherit; */
+    display: grid;
+    grid-template-rows: repeat(3, minmax(50px, 300px));
 }
 .tabs button {
-    /* width: 100%; */
     white-space: nowrap;
     font-size: 20px;
-    margin: 0.8em 0em 1em 0em;
+    /* margin: 0.8em 0em 1em 0em; */
     border: none;
     background-color: transparent;
-    /* margin-right: 2em; */
     letter-spacing: 0.1em;
-    transform: rotate(-90deg);
-    /* writing-mode: vertical-rl; */
+    transform: rotate(180deg);
+    writing-mode: vertical-lr;
+    padding: 2em;
     transition: color 0.3s ease;
     color: hsla(var(--raisin-black-base), 0.5);
-    width: 90%;
+    text-align: center;
 }
 .tabs button:hover {
     color: var(--sandy-brown-base);
     /* background-color: hsla(var(--champagne-pink), 0.50); */
 }
 .tabs:hover {
-
     /* background-color: hsla(var(--champagne-pink), 0.34); */
 }
+.tabs button:first-child {
+    color: yellow;
+    border-radius: 0px 35px 35px 0px;
+}
+.tabs button:last-child {
+    color: orange;
+    border-radius: 0px 35px 35px 0px;
+}
+.tabs button::before {
+    content: "";
+    position: absolute;
+    background-color: hsla(0, 0%, 0%, 0);
+    visibility: hidden;
+    /* backdrop-filter: blur(15px); */
 
+}
+.tabs button:not(:first-child):not(:last-child)::after {
+    content: "";
+    position: absolute;
+    background-color: hsla(0, 0%, 0%, 0);
+    visibility: hidden;
+    /* backdrop-filter: blur(15px); */
+}
+.tabs button:first-child.active::before {
+    visibility: visible; /* Make it visible */
+    top: -70px;
+    left: 0px;
+    height: 70px;
+    width: 35px;
+    border-bottom-left-radius: 35px;
+    box-shadow: 0 35px 0 0 var(--active-tab-color);
+    /* box-shadow: 0 35px 0 0 blue;  */
+    /* z-index: -50; */
+    /* background-color: red; */
+}
+.tabs button:last-child.active::before {
+    visibility: visible; /* Make it visible */
+    bottom: -70px; /* Adjust as needed */
+    left: 0px; /* Align to the right for the last child */
+    height: 70px;
+    width: 35px;
+     /* background-color: blueviolet; */
+    /* box-shadow: 0px -35px 0 0 red; */
+    border-top-left-radius: 35px; /* Adjust the border-radius for the last child */
+    box-shadow: 0px -35px 0 0 var(--active-tab-color);
+}
+.tabs button.active:not(:first-child)::before {
+    visibility: visible; /* Make it visible */
+    bottom: -70px; /* Adjust as needed */
+    left: 0px; /* Align to the right for the last child */
+    height: 70px;
+    width: 35px;
+    /* background-color: blueviolet;
+    box-shadow: 0px -35px 0 0 red; */
+    border-top-left-radius: 35px; 
+    box-shadow: 0px -35px 0 0 var(--active-tab-color);
+}
+.tabs button.active:not(:last-child):after {
+    visibility: visible; /* Make it visible */
+    /* Specific styles for the ::before of the first child when active */
+    top: -70px;
+    left: 0px;
+    height: 70px;
+    width: 35px;
+    border-bottom-left-radius: 35px;
+    box-shadow: 0 35px 0 0 var(--active-tab-color);
+}
+.tabs button:last-child:after {
+    visibility: hidden;
+}
+
+.tabs button.active {
+    border-bottom-right-radius: 35px;
+    border-top-right-radius: 35px;
+}
+
+.tabs .active {
+    color: red;
+    background-color: var(--active-tab-color); 
+    /* border-radius: 0px 0px 0px -35px; */
+}
 .ol li {
     padding: 0em 0.5em 0.25em 0.25em;
     list-style: decimal inside none;

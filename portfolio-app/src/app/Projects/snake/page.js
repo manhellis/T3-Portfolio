@@ -127,26 +127,39 @@ const Page = ({ params }) => {
                 <h1 className={styles.h1}>Snake Game</h1>
                 <h2>First Skills</h2>
             </div>
-
+            {/* componentize this section to be reused in each page  */}
             <div className={post.container}>
                 <div className={post.tabs}>
-                    <button onClick={handleTab(1)}>Intro</button>
-                    <button onClick={handleTab(2)}>Process</button>
-                    <button onClick={handleTab(3)}>Conclusion</button>
+                    <button
+                        className={`${tab === 1 ? post.active : post.inactive}`}
+                        onClick={handleTab(1)}
+                    >
+                        Intro
+                    </button>
+                    <button
+                        className={`${tab === 2 ? post.active : post.inactive}`}
+                        onClick={handleTab(2)}
+                    >
+                        Process
+                    </button>
+                    <button
+                        className={`${tab === 3 ? post.active : post.inactive}`}
+                        onClick={handleTab(3)}
+                    >
+                        Conclusion
+                    </button>
                 </div>
-                <div className={post.canvas}></div>
+                {/* <div className={post.canvas}></div> */}
                 {tab === 1 && tabContent1()}
                 {tab === 2 && tabContent2()}
                 {tab === 3 && tabContent3()}
-                <div>
+                {/* <div>
                     <img></img>
-                </div>
+                </div> */}
             </div>
 
             <div className={post.container}>
-                <iframe className={post.iframe} src="/snake.html">
-
-                </iframe>
+                <iframe className={post.iframe} src="/snake.html"></iframe>
             </div>
         </div>
     );
