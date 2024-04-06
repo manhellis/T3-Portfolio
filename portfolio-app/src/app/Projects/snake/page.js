@@ -7,7 +7,7 @@ const Page = ({ params }) => {
     const handleTab = (newTab) => () => setTab(newTab); // Updated to return a function
 
     const tabContent1 = () => (
-        <div className={post.description}>
+        <div className={`${post.description} ${post.description_1}` }>
             <h1 className={post.h1}>Purpose:</h1>
             <p>
                 The goal was to make a snake game without using any reference to
@@ -45,7 +45,7 @@ const Page = ({ params }) => {
     );
 
     const tabContent2 = () => (
-        <div className={post.description}>
+        <div className={`${post.description} ${post.description_2}` }>
             <h1 className={post.h1}>Drawing an Apple:</h1>
             <p>
                 Drawing an apple: An apple is just a filled cell, with width and
@@ -81,7 +81,7 @@ const Page = ({ params }) => {
     );
 
     const tabContent3 = () => (
-        <div className={post.description}>
+        <div className={`${post.description} ${post.description_3}` }>
             <h1 className={post.h1}>The Snake Tail:</h1>
             <p>
                 The function <code>moveBox(x,y)</code>: moves the player from

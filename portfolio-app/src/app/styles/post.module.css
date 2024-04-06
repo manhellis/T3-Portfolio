@@ -47,6 +47,14 @@
     border-radius: 35px;
     /* needs variety depending on tab */
 }
+.description_1 {
+    border-top-left-radius: 0px;
+
+}
+
+.description_3 {
+    border-bottom-left-radius: 0px;
+}
 .tabs {
     grid-column: 1/ 2;
     /* background-color: hsla(var(--champagne-pink), 0.34); */
@@ -81,11 +89,9 @@
     /* background-color: hsla(var(--champagne-pink), 0.34); */
 }
 .tabs button:first-child {
-    color: yellow;
     border-radius: 0px 35px 35px 0px;
 }
 .tabs button:last-child {
-    color: orange;
     border-radius: 0px 35px 35px 0px;
 }
 .tabs button::before {
@@ -174,8 +180,9 @@
     font-size: 1.3em;
 }
 .iframe {
-    width: 720px;
-    height: 820px;
+    /* width: 720px; */
+    width: 100%;
+    /* height: 820px; */
     margin: 0 auto;
     overflow: hidden;
 }

@@ -29,7 +29,7 @@
     --raisin-black-base: hsl(280, 9%, 20%);
 
     background-color: var(--baby-powder-base);
-    --active-tab-color: hsla(var(--champagne-pink), 0.6);
+    --active-tab-color: hsla(var(--champagne-pink), 0.8);
     /* --active-tab-color:purple; */
 }
 /* Header */
