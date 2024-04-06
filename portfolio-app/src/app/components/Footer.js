@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 const Footer = () => {
     const [showNumber, setShowNumber] = useState(false);
@@ -6,7 +7,9 @@ const Footer = () => {
     const toggleNumber = () => setShowNumber(!showNumber);
     return (
         <footer>
+            <Link href="/Contact">
             <h2>Contact</h2>
+            </Link>
 
             <div className="links">
                 <a>Instagram</a>

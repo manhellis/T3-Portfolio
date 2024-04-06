@@ -15,10 +15,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en" className={`${Sometype.variable} ${plex_sans.variable}`}>
+        <html
+            lang="en"
+            className={`${Sometype.variable} ${plex_sans.variable}`}
+        >
             <body>
                 <Header />
-                {children}
+                <main>{children}</main>
                 <Footer />
                 <div className="bg-three">
                     <Stage />

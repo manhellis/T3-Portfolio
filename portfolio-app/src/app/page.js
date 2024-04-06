@@ -1,11 +1,11 @@
-'use client';
+"use client";
 import Image from "next/image";
 import styles from "./page.module.css";
 import ArtifactCard from "./components/ArtifactCard";
 import { motion } from "framer-motion";
 export default function Home() {
     return (
-        <main className={styles.main}>
+        <>
             <div className={styles.landing}>
                 <div className={styles.landingImage}>
                     <div className={styles.image}></div>
@@ -20,12 +20,12 @@ export default function Home() {
                 whileInView={{ opacity: 1 }}
                 transition={{ ease: "easeInOut", duration: 0.5 }}
             > */}
-                <ArtifactCard
-                    imgSrc={"/snake.webp"}
-                    title="Snake Game"
-                    description="First Steps of JS"
-                    link="Projects/snake"
-                />
+            <ArtifactCard
+                imgSrc={"/snake.webp"}
+                title="Snake Game"
+                description="First Steps of JS"
+                link="Projects/snake"
+            />
             {/* </motion.div> */}
 
             <ArtifactCard
@@ -47,6 +47,6 @@ export default function Home() {
                 description="CSS Animations"
                 link="Projects/animation"
             />
-        </main>
+        </>
     );
 }
