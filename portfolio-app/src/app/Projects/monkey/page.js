@@ -3,12 +3,13 @@ import styles from "../project.module.css";
 import post from "../../styles/post.module.css";
 import { useState } from "react";
 import Link from "next/link";
+import TabContainer from "@/app/components/TabContainer";
 
 const Page = ({ params }) => {
     const [tab, setTab] = useState(1);
     const handleTab = (newTab) => () => setTab(newTab);
 
-    const tabContent1 = () => (
+    const tabContent1 = (
         <div className={post.description}>
             <h1 className={post.h1}>Narrative:</h1>
             <p>
@@ -32,7 +33,7 @@ const Page = ({ params }) => {
         </div>
     );
 
-    const tabContent2 = () => (
+    const tabContent2 = (
         <div className={post.description}>
             <h2 className={post.h1}>Loading Cards from Json:</h2>
             <p>
@@ -62,8 +63,6 @@ const Page = ({ params }) => {
         </div>
     );
 
-    
-
     return (
         <div className={post.post}>
             <div className={styles.title}>
@@ -71,7 +70,14 @@ const Page = ({ params }) => {
                 <h2>React and API Integration</h2>
             </div>
 
-            <div className={post.container}>
+            <TabContainer
+                contentTabs={[
+                    { title: "Narrative", content: tabContent1 },
+                    { title: "Steps", content: tabContent2 },
+                ]}
+            />
+
+            {/* <div className={post.container}>
                 <div className={post.tabs}>
                     <button onClick={handleTab(1)}>Narrative</button>
                     <button onClick={handleTab(2)}>Steps</button>
@@ -79,10 +85,16 @@ const Page = ({ params }) => {
                 <div className={post.canvas}></div>
                 {tab === 1 && tabContent1()}
                 {tab === 2 && tabContent2()}
-            </div>
+            </div> */}
             <div className={post.container2}>
-            
-                <Link className={post.link} rel="noopener noreferrer"  target="_blank" href="https://monkey-react.vercel.app/">Visit Site </Link>
+                <Link
+                    className={post.link}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://monkey-react.vercel.app/"
+                >
+                    Visit Site{" "}
+                </Link>
             </div>
         </div>
     );

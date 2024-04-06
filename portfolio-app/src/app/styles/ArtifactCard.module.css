@@ -15,7 +15,7 @@
 .card {
     /* min-width: 400px; */
     height: 460px;
-    background-color: hsla(var(--champagne-pink), 0.34);
+    background-color: hsla(var(--champagne-pink), 0.3);
     backdrop-filter: blur(14.5px);
     /* grid-column:3/8 ; */
 
@@ -27,6 +27,8 @@
     justify-items: center;
     align-items: center;
     transition: all 0.15s ease-in-out;
+    box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 .card:hover {
     transform: scale(1.02);

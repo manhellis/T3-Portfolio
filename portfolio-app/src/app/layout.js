@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         >
             <body>
                 <Header />
-                <main>{children}</main>
+                {children}
                 <Footer />
                 <div className="bg-three">
                     <Stage />

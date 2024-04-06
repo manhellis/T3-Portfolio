@@ -1,7 +1,7 @@
 import styles from "./page.module.css";
 const Page = () => {
     return (
-        <main>
+        <>
             <div className={styles.titleCard}>
                 <h1 className={styles.title}>About Me</h1>
                 <h2 className={styles.h2}>
@@ -47,7 +47,7 @@ const Page = () => {
             <div className={styles.imageContainerTwo}>
                 <img src="logo.svg" alt="Logo" />
             </div>
-        </main>
+        </>
     );
 };
 

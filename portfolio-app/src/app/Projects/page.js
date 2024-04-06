@@ -4,7 +4,7 @@ import styles from "./project.module.css";
 const Page = () => {
     const img1 = "https://picsum.photos/400/330";
     return (
-        <main>
+        <>
             <div className={styles.title}>
                 <h1 className={styles.h1}>Projects</h1>
                 <h2>Web Developer</h2>
@@ -24,7 +24,7 @@ const Page = () => {
                    
                 }
                 title="Artifact 2"
-                description="APIs, React and Mobile Layout"
+                description="GPT Wrapper with *style"
                 link="Projects/monkey"
             />
             <ArtifactCard
@@ -49,7 +49,7 @@ const Page = () => {
             <ArtifactCard />
             <ArtifactCard />
             <ArtifactCard /> */}
-        </main>
+        </>
     );
 };
 

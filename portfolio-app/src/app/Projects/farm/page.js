@@ -3,12 +3,13 @@ import styles from "../project.module.css";
 import post from "../../styles/post.module.css";
 import Link from "next/link";   
 import { useState } from "react";
+import TabContainer from "@/app/components/TabContainer"; // Ensure this import path is correct
 
 const Page = ({ params }) => {
-    const [tab, setTab] = useState(1);
-    const handleTab = (newTab) => () => setTab(newTab);
+    // No need to manage tab state here, TabContainer handles it internally
 
-    const tabContent1 = () => (
+    // Directly invoking the functions to get the JSX for tab content
+    const tabContent1JSX = (
         <div className={post.description}>
             <h1 className={post.h1}>Narrative:</h1>
             <p>
@@ -16,7 +17,7 @@ const Page = ({ params }) => {
                 a term project. Intrigued by the possibility of building a 3D
                 scene and navigating it within the browser, I embarked on this
                 creative journey.
-            </p>{" "}
+            </p>
             <h1 className={post.h1}>Development Process:</h1>
             <h2 className={post.h2}>Basic Scene:</h2>
             <p>
@@ -34,7 +35,7 @@ const Page = ({ params }) => {
         </div>
     );
 
-    const tabContent2 = () => (
+    const tabContent2JSX = (
         <div className={post.description}>
             <h2 className={post.h1}>My Own Scene:</h2>
             <p>
@@ -67,19 +68,14 @@ const Page = ({ params }) => {
                 <h2>Project Overview</h2>
             </div>
 
-            <div className={post.container}>
-                <div className={post.tabs}>
-                    <button onClick={handleTab(1)}>Intro</button>
-                    <button onClick={handleTab(2)}>Conclusion</button>
-                   
-                </div>
-                <div className={post.canvas}></div>
-                {tab === 1 && tabContent1()}
-                {tab === 2 && tabContent2()}
-            </div>
+            <TabContainer
+                contentTabs={[
+                    { title: "Intro", content: tabContent1JSX },
+                    { title: "Conclusion", content: tabContent2JSX },
+                ]}
+            />
             <div className={post.container2}>
-            
-                <Link className={post.link} rel="noopener noreferrer"  target="_blank" href="https://web-scripting-term-project.vercel.app/">Visit Site </Link>
+                <Link className={post.link} rel="noopener noreferrer" target="_blank" href="https://web-scripting-term-project.vercel.app/">Visit Site </Link>
             </div>
         </div>
     );

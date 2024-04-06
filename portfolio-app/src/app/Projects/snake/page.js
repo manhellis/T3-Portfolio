@@ -1,13 +1,11 @@
 "use client";
 import styles from "../project.module.css";
 import post from "../../styles/post.module.css";
-import { useState } from "react";
-const Page = ({ params }) => {
-    const [tab, setTab] = useState(1);
-    const handleTab = (newTab) => () => setTab(newTab); // Updated to return a function
+import TabContainer from "@/app/components/TabContainer"; // Ensure correct import path
 
-    const tabContent1 = () => (
-        <div className={`${post.description} ${post.description_1}` }>
+const Page = ({ params }) => {
+    const tabContent1JSX = (
+        <div className={`${post.description} ${post.description_1}`}>
             <h1 className={post.h1}>Purpose:</h1>
             <p>
                 The goal was to make a snake game without using any reference to
@@ -43,9 +41,8 @@ const Page = ({ params }) => {
             </p>
         </div>
     );
-
-    const tabContent2 = () => (
-        <div className={`${post.description} ${post.description_2}` }>
+    const tabContent2JSX = (
+        <div className={`${post.description} ${post.description_2}`}>
             <h1 className={post.h1}>Drawing an Apple:</h1>
             <p>
                 Drawing an apple: An apple is just a filled cell, with width and
@@ -80,8 +77,8 @@ const Page = ({ params }) => {
         </div>
     );
 
-    const tabContent3 = () => (
-        <div className={`${post.description} ${post.description_3}` }>
+    const tabContent3JSX =  (
+        <div className={`${post.description} ${post.description_3}`}>
             <h1 className={post.h1}>The Snake Tail:</h1>
             <p>
                 The function <code>moveBox(x,y)</code>: moves the player from
@@ -121,45 +118,28 @@ const Page = ({ params }) => {
         </div>
     );
 
+
     return (
         <div className={post.post}>
             <div className={styles.title}>
                 <h1 className={styles.h1}>Snake Game</h1>
                 <h2>First Skills</h2>
             </div>
-            {/* componentize this section to be reused in each page  */}
-            <div className={post.container}>
-                <div className={post.tabs}>
-                    <button
-                        className={`${tab === 1 ? post.active : post.inactive}`}
-                        onClick={handleTab(1)}
-                    >
-                        Intro
-                    </button>
-                    <button
-                        className={`${tab === 2 ? post.active : post.inactive}`}
-                        onClick={handleTab(2)}
-                    >
-                        Process
-                    </button>
-                    <button
-                        className={`${tab === 3 ? post.active : post.inactive}`}
-                        onClick={handleTab(3)}
-                    >
-                        Conclusion
-                    </button>
-                </div>
-                {/* <div className={post.canvas}></div> */}
-                {tab === 1 && tabContent1()}
-                {tab === 2 && tabContent2()}
-                {tab === 3 && tabContent3()}
-                {/* <div>
-                    <img></img>
-                </div> */}
-            </div>
+
+            <TabContainer
+                contentTabs={[
+                    { title: "Intro", content: tabContent1JSX },
+                    { title: "Process", content: tabContent2JSX },
+                    { title: "Conclusion", content: tabContent3JSX },
+                ]}
+            />
 
             <div className={post.container}>
-                <iframe className={post.iframe} src="/snake.html"></iframe>
+                <iframe
+                    className={post.iframe}
+                    src="/snake.html"
+                    title="Snake Game"
+                ></iframe>
             </div>
         </div>
     );

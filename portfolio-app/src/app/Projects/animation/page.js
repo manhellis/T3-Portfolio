@@ -1,13 +1,12 @@
 "use client";
 import styles from "../project.module.css";
 import post from "../../styles/post.module.css";
-import { useState } from "react";
+import TabContainer from "@/app/components/TabContainer"; // Ensure this import path is correct
 
 const Page = ({ params }) => {
-    const [tab, setTab] = useState(1);
-    const handleTab = (newTab) => () => setTab(newTab);
+    // The tab state and handleTab function are now managed by TabContainer
 
-    const tabContent1 = () => (
+    const tabContent1JSX = (
         <div className={post.description}>
             <h1 className={post.h1}>Narrative & Overview:</h1>
             <p>
@@ -32,9 +31,8 @@ const Page = ({ params }) => {
         </div>
     );
 
-    const tabContent2 = () => (
+    const tabContent2JSX = (
         <div className={post.description}>
-
             <h2 className={post.h1}>Santa Claus Scene:</h2>
             <p>
                 This animation involved a moving background with a flying Santa
@@ -42,21 +40,12 @@ const Page = ({ params }) => {
                 within the moving landscape.
             </p>
             <iframe src="/santa.html" className={post.iframe} title="Santa Claus" />
-            
         </div>
     );
-{/* <h1 className={post.h1}>Technical Insights & Applications:</h1>
-            <p>
-                The use of SVGs and CSS animations offers a rich landscape for
-                web animation, providing a versatile toolset for adding dynamic
-                and visually appealing elements to web pages. These projects
-                highlight the potential of simple CSS and JS to create engaging
-                user experiences and the importance of creative experimentation
-                in web design.
-            </p> */}
-    const tabContent3 = () => (
+
+    const tabContent3JSX = (
         <div className={post.description}>
-             <h2 className={post.h1}>Wave Function in JS:</h2>
+            <h2 className={post.h1}>Wave Function in JS:</h2>
             <p>
                 A demonstration of how object positions can be related to a sine
                 wave, with the added feature of color-changing circles based on
@@ -68,7 +57,7 @@ const Page = ({ params }) => {
         </div>
     );
 
-    const tabContent4 = () => (
+    const tabContent4JSX = (
         <div className={post.description}>
             <h2 className={post.h1}>Preloader:</h2>
             <p>
@@ -87,29 +76,14 @@ const Page = ({ params }) => {
                 <h2>A Showcase of Vanilla CSS and JS Projects</h2>
             </div>
 
-            <div className={post.container}>
-                <div className={post.tabs}>
-                    <button onClick={handleTab(1)}>Christmas</button>
-                    <button onClick={handleTab(2)}>Santa</button>
-                    <button onClick={handleTab(3)}>Wave Function</button>
-                    <button onClick={handleTab(4)}>Preloader</button>
-                </div>
-                <div className={post.canvas}></div>
-                {tab === 1 && tabContent1()}
-                {tab === 2 && tabContent2()}
-                {tab === 3 && tabContent3()}
-                {tab === 4 && tabContent4()}
-            </div>
-
-            {/* <div className={post.container}>
-                <div className={post.tabs}>
-                    <button onClick={handleTab(1)}>Narrative & Overview</button>
-                    <button onClick={handleTab(2)}>Animation Showcases</button>
-                    <button onClick={handleTab(3)}>
-                        Technical Insights & Applications
-                    </button>
-                </div>
-            </div> */}
+            <TabContainer
+                contentTabs={[
+                    { title: "Christmas", content: tabContent1JSX },
+                    { title: "Santa", content: tabContent2JSX },
+                    { title: "Wave Function", content: tabContent3JSX },
+                    { title: "Preloader", content: tabContent4JSX },
+                ]}
+            />
         </div>
     );
 };
