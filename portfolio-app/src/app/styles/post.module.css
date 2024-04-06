@@ -1,7 +1,8 @@
-
-
 .post {
     display: contents;
+}
+.motion {
+    height: 100%;
 }
 
 .container {
@@ -11,7 +12,7 @@
     backdrop-filter: blur(15px);
     border-radius: 45px;
     display: grid;
-    grid-template-columns: minmax(50px,100px) 1fr;
+    grid-template-columns: minmax(50px, 100px) 1fr;
     /* grid-template-rows: 1fr; */
     margin-bottom: 100px;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -52,7 +53,6 @@
 }
 .description_1 {
     border-top-left-radius: 0px;
-
 }
 
 .description_3 {
@@ -101,7 +101,6 @@
     background-color: hsla(0, 0%, 0%, 0);
     visibility: hidden;
     /* backdrop-filter: blur(15px); */
-
 }
 .tabs button:not(:first-child):not(:last-child)::after {
     content: "";
@@ -128,7 +127,7 @@
     left: 0px; /* Align to the right for the last child */
     height: 70px;
     width: 35px;
-     /* background-color: blueviolet; */
+    /* background-color: blueviolet; */
     /* box-shadow: 0px -35px 0 0 red; */
     border-top-left-radius: 35px; /* Adjust the border-radius for the last child */
     box-shadow: 0px -35px 0 0 var(--active-tab-color);
@@ -141,7 +140,7 @@
     width: 35px;
     /* background-color: blueviolet;
     box-shadow: 0px -35px 0 0 red; */
-    border-top-left-radius: 35px; 
+    border-top-left-radius: 35px;
     box-shadow: 0px -35px 0 0 var(--active-tab-color);
 }
 .tabs button.active:not(:last-child):after {
@@ -165,7 +164,7 @@
 
 .tabs .active {
     color: red;
-    background-color: var(--active-tab-color); 
+    background-color: var(--active-tab-color);
     /* border-radius: 0px 0px 0px -35px; */
 }
 .ol li {
@@ -182,7 +181,8 @@
 }
 .iframe {
     /* width: 720px; */
-    width: 100%;
+    width: 75%vw;
+    height: auto;
     /* height: 820px; */
     margin: 0 auto;
     overflow: hidden;

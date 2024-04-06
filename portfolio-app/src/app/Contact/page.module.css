@@ -1,9 +1,8 @@
 .container {
-    background-color: hsla(var(--champagne-pink), 0.34);
+    background-color: hsla(var(--champagne-pink), 0.60);
     backdrop-filter: blur(15px);
-    /* width: 100px; */
-    /* height: 100px; */
-    grid-column: 2/8;
+    grid-column-start: 4;
+    grid-column-end: span 6;
     border-radius: 35px;
     padding: 1rem;
 }
@@ -22,5 +21,16 @@
 @media (max-width: 1024px) {
     .title {
         grid-column: span 8;
+    }
+    .container {
+        grid-column-start: 2;
+        grid-column-end: span 6;
+    }
+}
+@media (max-width: 768px) {
+  
+    .container {
+        grid-column-start: 1;
+        grid-column-end: span 8 ;
     }
 }

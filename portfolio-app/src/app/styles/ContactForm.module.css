@@ -11,7 +11,7 @@
     justify-content: center;
     margin: 1rem 3rem;
     padding: 1rem;
-    background-color: hsla(var(--champagne-pink), 0.6);
+    /* background-color: hsla(var(--champagne-pink), 0.6); */
 }
 .input {
     margin: 1rem;
@@ -28,6 +28,7 @@
     border: 1px solid var(--raisin-black-base);
     background-color: hsla(var(--champagne-pink), 0.6);
     width: 75%;
+    resize:vertical;
 }
 .submit {
     margin: 1rem;

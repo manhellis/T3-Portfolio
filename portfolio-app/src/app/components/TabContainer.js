@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-
+import { motion } from "framer-motion";
 import post from "../styles/post.module.css";
 
 const Tab = ({ number, tab, text, handleTab }) => {
@@ -31,7 +31,11 @@ const TabContainer = ({ contentTabs }) => {
                     />
                 ))}
             </div>
-
+            {/* <motion
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ ease: "easeInOut", duration: 0.5 }}
+            ></motion> */}
             {contentTabs
                 .filter((_, index) => index + 1 === tab)
                 .map((content, index) => (
