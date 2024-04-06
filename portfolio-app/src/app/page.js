@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import ArtifactCard from "./components/ArtifactCard";
 import { motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
 export default function Home() {
     return (
         <>
@@ -11,7 +12,24 @@ export default function Home() {
                     <div className={styles.image}></div>
                 </div>
                 <div className={styles.landingText}>
-                    <h2 className={styles.h2}>Web Developer</h2>
+                    <TypeAnimation
+                        sequence={[
+                          
+                            "Web Developer",
+                            4000, 
+                            "Climber",
+                            2000,
+                            "Photographer",
+                            2000,
+                            
+                        ]}
+                        wrapper="span"
+                        speed={25}
+                        // style={{styles.h2}}
+                        repeat={Infinity}
+                        className={styles.h2}
+                    />
+                    {/* <h2 className={styles.h2}>Web Developer</h2> */}
                     <h1 className={styles.h1}>Manh Ellis</h1>
                 </div>
             </div>
@@ -27,7 +45,6 @@ export default function Home() {
                 link="Projects/snake"
             />
             {/* </motion.div> */}
-
             <ArtifactCard
                 imgSrc={"/Monkey-Selfie.webp"}
                 title="Artifact 2"

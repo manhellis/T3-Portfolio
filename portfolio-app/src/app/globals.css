@@ -239,6 +239,7 @@ main {
     gap: 20px;
     /* max-width: 1280px; */
     width: calc(100% - 40px);
+    scroll-snap-type: y mandatory;
 }
 
 /* canvas */

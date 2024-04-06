@@ -48,7 +48,7 @@
     width: 415px;
     height: 415px;
     background-color: hsla(var(--champagne-pink), 0.59);
-
+    scroll-snap-align: center;
     backdrop-filter: blur(15px);
 
     margin-bottom: 100px;
