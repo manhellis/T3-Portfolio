@@ -14,14 +14,12 @@ export default function Home() {
                 <div className={styles.landingText}>
                     <TypeAnimation
                         sequence={[
-                          
                             "Web Developer",
-                            4000, 
+                            4000,
                             "Climber",
                             2000,
                             "Photographer",
                             2000,
-                            
                         ]}
                         wrapper="span"
                         speed={25}
@@ -44,24 +42,23 @@ export default function Home() {
                 description="First Steps of JS"
                 link="Projects/snake"
             />
-            {/* </motion.div> */}
             <ArtifactCard
                 imgSrc={"/Monkey-Selfie.webp"}
-                title="Artifact 2"
-                description="APIs, React and Mobile Layout"
+                title="AI Monkey Jokes"
+                description="GPT Wrapper with *style"
                 link="Projects/monkey"
             />
             <ArtifactCard
                 imgSrc={"/cow.webp"}
-                title="Artifact 3"
+                title="3D Farm"
                 description="Cows and threejs"
                 link="Projects/farm"
             />
 
             <ArtifactCard
                 imgSrc={"/anim.jpg"}
-                title="Artifact 4"
-                description="CSS Animations"
+                title="Web Animation"
+                description="CSS, JS"
                 link="Projects/animation"
             />
         </>

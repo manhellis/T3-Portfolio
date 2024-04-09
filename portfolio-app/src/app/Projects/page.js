@@ -19,31 +19,30 @@ const Page = () => {
                 link="Projects/snake"
             />
             <ArtifactCard
-                imgSrc={
-                    "/Monkey-Selfie.webp"
-                   
-                }
-                title="Artifact 2"
+                imgSrc={"/Monkey-Selfie.webp"}
+                title="AI Monkey Jokes"
                 description="GPT Wrapper with *style"
                 link="Projects/monkey"
             />
             <ArtifactCard
-                imgSrc={
-                    "/cow.webp"
-                }
-                title="Artifact 3"
+                imgSrc={"/cow.webp"}
+                title="3D Farm"
                 description="Cows and threejs"
                 link="Projects/farm"
             />
-            
+
             <ArtifactCard
-                imgSrc={
-                    "/anim.jpg"
-                }
-                title="Artifact 4"
-                description="CSS Animations"
+                imgSrc={"/anim.jpg"}
+                title="Web Animation"
+                description="CSS, JS"
                 link="Projects/animation"
             />
+            {/* <ArtifactCard
+                imgSrc={"/ifsc.png"}
+                title="IFSC Results"
+                description="Python, Docker, NextJs"
+                link="Projects/ifsc-results"
+            /> */}
             {/* <ArtifactCard />
             <ArtifactCard />
             <ArtifactCard />
