@@ -8,6 +8,8 @@ import Stage from "./components/three/stage";
 import { Sometype, plex_sans } from "./fonts";
 import Footer from "./components/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
+
 // import OptimizedStage from "./components/three/OptimizedStage";
 export const metadata = {
     title: "Manh Portfolio",
