@@ -85,6 +85,10 @@
     display: grid;
     grid-template-rows: repeat(3, minmax(50px, 300px));
 }
+.tabs .active {
+    background-color: var(--active-tab-color);
+    /* border-radius: 0px 0px 0px -35px; */
+}
 .tabs button {
     white-space: nowrap;
     font-size: 20px;
@@ -99,6 +103,18 @@
     color: hsla(var(--raisin-black-base), 0.5);
     text-align: center;
 }
+@media (max-width: 768px) {
+    .tabs button {
+        transform: rotate(-90deg);
+        padding: 0em;
+
+
+    }
+    .tabs .active {
+        background-color: transparent;
+    }
+}
+
 .tabs button:hover {
     color: var(--sandy-brown-base);
     /* background-color: hsla(var(--champagne-pink), 0.50); */
@@ -177,10 +193,7 @@
     border-top-right-radius: 35px;
 }
 
-.tabs .active {
-    background-color: var(--active-tab-color);
-    /* border-radius: 0px 0px 0px -35px; */
-}
+
 .ol li {
     padding: 0em 0.5em 0.25em 0.25em;
     list-style: decimal inside none;

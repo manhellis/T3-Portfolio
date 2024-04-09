@@ -30,6 +30,8 @@ export default function RootLayout({ children }) {
                     <Stage />
                     {/* <OptimizedStage /> */}
                 </div>
+                <SpeedInsights />
+                <Analytics />
             </body>
         </html>
     );
