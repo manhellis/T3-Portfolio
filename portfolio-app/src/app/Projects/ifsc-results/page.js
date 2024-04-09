@@ -16,7 +16,8 @@ const Page = () => {
             <p>
                 The International Federation of Sport Climbing (IFSC) is the
                 official international organization that runs climbing
-                competitions worldwide. Currently they host their results on a site <a href="ifsc.results.info">ifsc.results.info</a>.
+                competitions worldwide. Currently they host their results on a
+                site <a href="ifsc.results.info">ifsc.results.info</a>.
             </p>
             <h1 className={post.h1}>Development Process:</h1>
             <p>Currently, </p>
