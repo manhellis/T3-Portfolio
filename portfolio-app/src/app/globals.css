@@ -48,7 +48,7 @@ header {
     /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); */
     z-index: 100;
     padding: 20px;
-    background-color: hsla(var(--champagne-pink), 0.2);
+    background-color: hsla(var(--champagne-pink), 0.3);
     backdrop-filter: blur(30px);
     border-radius: 0 0 35px 35px;
     color: var(--raisin-black-base);

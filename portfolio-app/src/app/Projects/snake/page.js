@@ -5,7 +5,7 @@ import TabContainer from "@/app/components/TabContainer"; // Ensure correct impo
 
 const Page = ({ params }) => {
     const tabContent1JSX = (
-        <div className={`${post.description} ${post.description_1}`}>
+        <>
             <h1 className={post.h1}>Purpose:</h1>
             <p>
                 The goal was to make a snake game without using any reference to
@@ -39,7 +39,7 @@ const Page = ({ params }) => {
                 in 2D. In the loop, a line is drawn from bottom to top, then
                 left to right, placing the cellSize width between them.
             </p>
-        </div>
+        </>
     );
     const tabContent2JSX = (
         <>
