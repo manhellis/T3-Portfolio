@@ -7,6 +7,7 @@ import Stage from "./components/three/stage";
 // const plex_sans = IBM_Plex_Sans({ subsets: ["latin"] });
 import { Sometype, plex_sans } from "./fonts";
 import Footer from "./components/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 // import OptimizedStage from "./components/three/OptimizedStage";
 export const metadata = {
     title: "Manh Portfolio",
