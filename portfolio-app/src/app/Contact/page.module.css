@@ -5,6 +5,8 @@
     grid-column-end: span 6;
     border-radius: 35px;
     padding: 1rem;
+    box-shadow: 0 8px 32px 0 hsla(var(--tropical-indigo), 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 .h1 {
     font-size: 72px;

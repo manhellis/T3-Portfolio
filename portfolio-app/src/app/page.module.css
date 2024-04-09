@@ -16,6 +16,7 @@
     color: var(--raisin-black-base);
     grid-column: 6 / 12;
     text-align: right;
+    white-space: nowrap;
 }
 .landing {
     background-color: hsla(var(--champagne-pink), 0.34);
