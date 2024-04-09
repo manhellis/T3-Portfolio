@@ -42,7 +42,7 @@ const Page = ({ params }) => {
         </div>
     );
     const tabContent2JSX = (
-        <div className={`${post.description} ${post.description_2}`}>
+        <>
             <h1 className={post.h1}>Drawing an Apple:</h1>
             <p>
                 Drawing an apple: An apple is just a filled cell, with width and
@@ -74,11 +74,11 @@ const Page = ({ params }) => {
                 When an apple is eaten, the global variable tailLen is
                 incremented by 1.
             </p>
-        </div>
+        </>
     );
 
     const tabContent3JSX =  (
-        <div className={`${post.description} ${post.description_3}`}>
+        <>
             <h1 className={post.h1}>The Snake Tail:</h1>
             <p>
                 The function <code>moveBox(x,y)</code>: moves the player from
@@ -115,7 +115,7 @@ const Page = ({ params }) => {
                 Wall collision detection works, but only ends the game with no
                 user feedback. Tail collision does not work.
             </p>
-        </div>
+        </>
     );
 
 

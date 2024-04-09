@@ -2,6 +2,7 @@
     font-size: 72px;
     font-weight: 700;
     letter-spacing: 0.11em;
+    margin-bottom: 0.3em;
     /* mix-blend-mode: exclusion; */ /*  would be cool to find a nice blend mode here */
 }
 

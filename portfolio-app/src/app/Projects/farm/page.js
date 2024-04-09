@@ -1,7 +1,7 @@
 "use client";
 import styles from "../project.module.css";
 import post from "../../styles/post.module.css";
-import Link from "next/link";   
+import Link from "next/link";
 import { useState } from "react";
 import TabContainer from "@/app/components/TabContainer"; // Ensure this import path is correct
 
@@ -10,7 +10,7 @@ const Page = ({ params }) => {
 
     // Directly invoking the functions to get the JSX for tab content
     const tabContent1JSX = (
-        <div className={post.description}>
+        <>
             <h1 className={post.h1}>Narrative:</h1>
             <p>
                 ThreeJs was recommended as a JavaScript Library for implementing
@@ -32,11 +32,11 @@ const Page = ({ params }) => {
                 Additionally, I explored importing external models and
                 highlighting edge geometry.
             </p>
-        </div>
+        </>
     );
 
     const tabContent2JSX = (
-        <div className={post.description}>
+        <>
             <h2 className={post.h1}>My Own Scene:</h2>
             <p>
                 Progressing beyond the basics, I constructed a custom scene in
@@ -58,7 +58,21 @@ const Page = ({ params }) => {
                 design, data-driven reporting, and producing visually engaging
                 content.
             </p>
-        </div>
+        </>
+    );
+    const tabContent3JSX = (
+        <>
+            <div className={post.linkContainer}>
+                <Link
+                    className={post.link}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://web-scripting-term-project.vercel.app/"
+                >
+                    Visit Site{" "}
+                </Link>
+            </div>
+        </>
     );
 
     return (
@@ -72,11 +86,9 @@ const Page = ({ params }) => {
                 contentTabs={[
                     { title: "Intro", content: tabContent1JSX },
                     { title: "Conclusion", content: tabContent2JSX },
+                    { title: "Visit Site", content: tabContent3JSX },
                 ]}
             />
-            <div className={post.container2}>
-                <Link className={post.link} rel="noopener noreferrer" target="_blank" href="https://web-scripting-term-project.vercel.app/">Visit Site </Link>
-            </div>
         </div>
     );
 };

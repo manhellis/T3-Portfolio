@@ -27,7 +27,8 @@
     justify-items: center;
     align-items: center;
     transition: all 0.15s ease-in-out;
-    box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.37);
+    box-shadow: 0 4px 16px 0 hsla(var(--tropical-indigo), 0.7);
+
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 .card:hover {

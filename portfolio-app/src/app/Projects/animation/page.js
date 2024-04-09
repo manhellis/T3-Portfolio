@@ -7,7 +7,7 @@ const Page = ({ params }) => {
     // The tab state and handleTab function are now managed by TabContainer
 
     const tabContent1JSX = (
-        <div className={post.description}>
+        <>
             <h1 className={post.h1}>Narrative & Overview:</h1>
             <p>
                 I embarked on creating a variety of animations using vanilla CSS
@@ -28,11 +28,11 @@ const Page = ({ params }) => {
                 tinsel-like flair.
             </p>
             <iframe src="/tree.html" className={post.iframe} title="Christmas Tree" />
-        </div>
+        </>
     );
 
     const tabContent2JSX = (
-        <div className={post.description}>
+        <>
             <h2 className={post.h1}>Santa Claus Scene:</h2>
             <p>
                 This animation involved a moving background with a flying Santa
@@ -40,11 +40,11 @@ const Page = ({ params }) => {
                 within the moving landscape.
             </p>
             <iframe src="/santa.html" className={post.iframe} title="Santa Claus" />
-        </div>
+        </>
     );
 
     const tabContent3JSX = (
-        <div className={post.description}>
+        <>
             <h2 className={post.h1}>Wave Function in JS:</h2>
             <p>
                 A demonstration of how object positions can be related to a sine
@@ -54,11 +54,11 @@ const Page = ({ params }) => {
                 progress bars.
             </p>
             <iframe src="/wave.html" className={post.iframe} title="Wave Function" />
-        </div>
+        </>
     );
 
     const tabContent4JSX = (
-        <div className={post.description}>
+        <div className={`${post.description} ${post.description_4}`}>
             <h2 className={post.h1}>Preloader:</h2>
             <p>
                 A CSS-only preloader animation showcases squares transforming

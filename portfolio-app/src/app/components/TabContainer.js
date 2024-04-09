@@ -21,6 +21,7 @@ const TabContainer = ({ contentTabs }) => {
     return (
         <div className={post.container}>
             <div className={post.tabs}>
+                {/* add hint to click tabs */}
                 {contentTabs.map((tabInfo, index) => (
                     <Tab
                         key={index}
@@ -39,7 +40,16 @@ const TabContainer = ({ contentTabs }) => {
             {contentTabs
                 .filter((_, index) => index + 1 === tab)
                 .map((content, index) => (
-                    <>{content.content}</>
+                    <div
+                        key={index}
+                        className={`
+                        ${post.description} 
+                        ${tab === 1 ? post.firstDescription: ""} 
+                        ${tab === contentTabs.length ? post.lastDescription: ""}
+                    `}
+                    >
+                        {content.content}
+                    </div>
                 ))}
         </div>
     );
