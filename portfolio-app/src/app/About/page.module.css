@@ -90,7 +90,8 @@
     width: 415px;
     height: 415px;
     background-color: hsla(var(--champagne-pink), 0.59);
-    
+    background-image: url("/pfp_2.webp");
+    background-repeat: no-repeat;
     /* padding-top: 200px; */
     /* margin: 100px 50px; */
 }

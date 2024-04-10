@@ -37,12 +37,12 @@ const Page = () => {
                 description="CSS, JS"
                 link="Projects/animation"
             />
-            {/* <ArtifactCard
+            <ArtifactCard
                 imgSrc={"/ifsc.png"}
                 title="IFSC Results"
                 description="Python, Docker, NextJs"
-                link="Projects/ifsc-results"
-            /> */}
+                link="Projects/ifsc-app"
+            />
             {/* <ArtifactCard />
             <ArtifactCard />
             <ArtifactCard />

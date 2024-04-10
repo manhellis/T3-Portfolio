@@ -44,7 +44,7 @@ const Page = () => {
                     className={post.link}
                     rel="noopener noreferrer"
                     target="_blank"
-                    href="https://web-scripting-term-project.vercel.app/"
+                    href="http://ifsc.manhellis.com"
                 >
                     Visit Site{" "}
                 </Link>

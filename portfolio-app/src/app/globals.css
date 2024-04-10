@@ -111,6 +111,7 @@ a:hover {
     background: none;
     justify-self: center;
     transition: all 0.5s ease-in-out;
+    color:var(--raisin-black-base);
     /* margin-right: 5rem; */
 }
 .mobile-nav .icon:hover {
@@ -177,7 +178,7 @@ footer {
     bottom: 0;
     grid-column: 1 / 13;
     padding: 20px;
-    margin-top: 125px;
+    margin-top: 200px;
     background-color: hsla(var(--champagne-pink), 0.31);
     backdrop-filter: blur(30px);
     border-radius: 35px 35px 0 0;

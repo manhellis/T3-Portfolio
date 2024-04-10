@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import ArtifactCard from "./components/ArtifactCard";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
 export default function Home() {
     return (
@@ -10,6 +11,10 @@ export default function Home() {
             <div className={styles.landing}>
                 <div className={styles.landingImage}>
                     <div className={styles.image}></div>
+                    {/* <Link href="/Contact" className={styles.cta} scroll={false}>
+                        Let's Talk
+                    </Link> */}
+                    {/* <image className={styles.image} src="/pfp_1.webp" /> */}
                 </div>
                 <div className={styles.landingText}>
                     <TypeAnimation
@@ -36,12 +41,12 @@ export default function Home() {
                 whileInView={{ opacity: 1 }}
                 transition={{ ease: "easeInOut", duration: 0.5 }}
             > */}
-            <ArtifactCard
+            {/* <ArtifactCard
                 imgSrc={"/snake.webp"}
                 title="Snake Game"
                 description="First Steps of JS"
                 link="Projects/snake"
-            />
+            /> */}
             <ArtifactCard
                 imgSrc={"/Monkey-Selfie.webp"}
                 title="AI Monkey Jokes"
@@ -54,13 +59,24 @@ export default function Home() {
                 description="Cows and threejs"
                 link="Projects/farm"
             />
-
             <ArtifactCard
+                imgSrc={"/ifsc.png"}
+                title="IFSC Results"
+                description="Python, Docker, NextJs"
+                link="Projects/ifsc-app"
+            />
+            {/* <ArtifactCard
                 imgSrc={"/anim.jpg"}
                 title="Web Animation"
                 description="CSS, JS"
                 link="Projects/animation"
-            />
+            /> */}
+            <div className={styles.ctaContainer}>
+                <Link href="/Projects" className={styles.cta}>
+                    All Projects
+                </Link>
+            </div>
+            {/* <div className="spacer"></div> */}
         </>
     );
 }

@@ -13,7 +13,7 @@ const Footer = () => {
 
             <div className="links">
                 <a href="https://www.instagram.com/manh_ellis/">Instagram</a>
-                <a href="www.linkedin.com/in/manhellis">Linkedin</a>
+                <a href="https:///www.linkedin.com/in/manhellis">Linkedin</a>
                 {/* <button>Phone</button> */}
                 {showNumber ? (
                     <a
