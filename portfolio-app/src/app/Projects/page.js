@@ -38,7 +38,7 @@ const Page = () => {
                 link="Projects/animation"
             />
             <ArtifactCard
-                imgSrc={"/ifsc.png"}
+                imgSrc={"/ifsc.webp"}
                 title="IFSC Results"
                 description="Python, Docker, NextJs"
                 link="Projects/ifsc-app"
