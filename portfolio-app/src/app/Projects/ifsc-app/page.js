@@ -52,6 +52,8 @@ const Page = () => {
         </>
     );
 
+    const spacers = [3];
+
     return (
         <div className={post.post}>
             <div className={styles.title}>
@@ -66,6 +68,9 @@ const Page = () => {
                     { title: "Hosting", content: tabContent3JSX },
                 ]}
             />
+            <div className={post.spacer}></div>
+            <div className={post.spacer}></div>
+            <div className={post.spacer}></div>
         </div>
     );
 };

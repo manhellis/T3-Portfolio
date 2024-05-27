@@ -60,6 +60,7 @@
     color: var(--raisin-black-base);
     background-color: var(--active-tab-color);
     border-radius: 35px;
+    overflow: auto;
     /* needs variety depending on tab */
 }
 /* if first child of .tabs, smooth description_1 border radius
@@ -105,13 +106,13 @@
 }
 @media (max-width: 768px) {
     .tabs button {
-        transform: rotate(-90deg);
-        padding: 0em;
+        /* transform: rotate(-90deg); */
+        /* padding: 0em; */
 
 
     }
     .tabs .active {
-        background-color: transparent;
+        /* background-color: transparent; */
     }
 }
 
@@ -216,4 +217,10 @@
     margin: 0 auto;
     margin-top: 2em;
     overflow: hidden;
+}
+
+
+/* spacer content */
+.spacer {
+    height: 100vh;
 }
