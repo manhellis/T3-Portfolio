@@ -60,7 +60,6 @@
     color: var(--raisin-black-base);
     background-color: var(--active-tab-color);
     border-radius: 35px;
-    overflow: auto;
     /* needs variety depending on tab */
 }
 /* if first child of .tabs, smooth description_1 border radius
@@ -104,17 +103,7 @@
     color: hsla(var(--raisin-black-base), 0.5);
     text-align: center;
 }
-@media (max-width: 768px) {
-    .tabs button {
-        /* transform: rotate(-90deg); */
-        /* padding: 0em; */
 
-
-    }
-    .tabs .active {
-        /* background-color: transparent; */
-    }
-}
 
 .tabs button:hover {
     color: var(--sandy-brown-base);
@@ -219,8 +208,93 @@
     overflow: hidden;
 }
 
+@media (max-width: 768px) {
+    .container {
+        height: auto !important;
+    }
+    .description {
+        grid-row:2;
+        grid-column: 1/3 ;
+        
+    }
+    .lastDescription{
+        border-radius: 35px 0 35px 35px;
+    }
+    .tabs {
+        grid-row: 1;
+        grid-column: 1 / 3;
+        grid-template-columns: repeat(3, minmax(50px, 300px));
+        grid-template-rows: 1fr;
+        
+    }
+    .tabs button {
+        transform: rotate(0deg);
+        writing-mode:initial;
+        padding: 2em 1em;
+    }
+    .tabs button:first-child {
+        border-radius: 35px 35px 0px 0px;
+    }
+    .tabs button:last-child {
+        border-radius: 0px 35px 35px 0px;
+    }
+    .tabs button:not(:first-child):not(:last-child)::after {
+        background-color: hsla(0, 0%, 0%, 0);
+    }
+    .tabs button:first-child.active::before {
+        visibility: visible; /* Make it visible */
+        top: initial;
+        left: initial;
+        right: -70px;
+        bottom: 0px;
+        height: 35px;
+        width: 70px;
+        border-top-right-radius: 35px;
+        box-shadow: -35px 0 0 0 var(--active-tab-color);
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 35px;
+    }
+    .tabs button:last-child.active::before {
+        top: initial; 
+        bottom: 0px;
+        left: -70px;
+        height: 35px;
+        width: 70px;
+        box-shadow: 35px 0 0 0 var(--active-tab-color);
+        /* background-color: red; */
+        border-bottom-right-radius: 35px;
+    }
+    .tabs button.active:not(:first-child):not(:last-child):before { /* right side */
+        top: initial; 
+        bottom: 0px;
+        left: initial;
+        right: -70px;
+        height: 35px;
+        width: 70px;
+        border-bottom-left-radius: 35px;
+        border-top-left-radius: 0px;
+        box-shadow: -35px 0 0 0 var(--active-tab-color);
 
-/* spacer content */
-.spacer {
-    height: 100vh;
+    }
+    .tabs button.active:not(:last-child):after {
+        top: initial; 
+        bottom: 0px;
+        left: -70px;
+        height: 35px;
+        width: 70px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 35px;
+        border-bottom-left-radius: 0px;
+        box-shadow: 35px 0 0 0 var(--active-tab-color);
+    }
+    .tabs button:last-child:after {
+        visibility: hidden;
+    }
+    
+    .tabs button.active {
+      
+        border-radius: 35px 35px 0px 0px;
+    }
+    
+    
 }

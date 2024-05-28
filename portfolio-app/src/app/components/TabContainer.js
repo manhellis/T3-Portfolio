@@ -1,6 +1,6 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 import post from "../styles/post.module.css";
 const Tab = ({ number, tab, text, handleTab }) => {
@@ -17,29 +17,18 @@ const Tab = ({ number, tab, text, handleTab }) => {
 const TabContainer = ({ contentTabs }) => {
     const [tab, setTab] = useState(1);
     const handleTab = (newTab) => setTab(newTab);
-    const { scrollY } = useScroll();
-    const ref = useRef(null);
     const numberOfTabs = contentTabs.length;
-    const [pinBox, setPinBox] = useState(false);
-    const boxY = useTransform(
-        scrollY,
-        [0, window.innerHeight + 0],
-        [0, window.innerHeight]
-    );
+   
     const dynamicStyle = {
         height: `${numberOfTabs * 300}px`,
         // position: pinBox ? "sticky" : "relative",
         // top: pinBox ? boxY : "auto",
         // bottom: pinBox ? "auto" : 0,
     };
-    const isInView = useInView(ref, { amount: 0.9 }); // tabs
-    // useEffect(() => {
-    //     setPinBox(isInView)
-    //     console.log(isInView)
-    // },[isInView])
+
 
     return (
-        <motion.div className={post.container} style={dynamicStyle} ref={ref}>
+        <motion.div className={post.container} style={dynamicStyle} >
             <div className={post.tabs}>
                 {/* add hint to click tabs */}
                 {contentTabs.map((tabInfo, index) => (
