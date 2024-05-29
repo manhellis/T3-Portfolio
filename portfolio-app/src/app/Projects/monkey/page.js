@@ -4,7 +4,8 @@ import post from "../../styles/post.module.css";
 import { useState } from "react";
 import Link from "next/link";
 import TabContainer from "@/app/components/TabContainer";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBook, faGlobe, faListCheck } from "@fortawesome/free-solid-svg-icons";
 const Page = ({ params }) => {
     const [tab, setTab] = useState(1);
     const handleTab = (newTab) => () => setTab(newTab);
@@ -94,9 +95,9 @@ const Page = ({ params }) => {
 
             <TabContainer
                 contentTabs={[
-                    { title: "Narrative", content: tabContent1() },
-                    { title: "Steps", content: tabContent2() },
-                    { title: "Live Site", content: tabContent3() },
+                    { title: "Narrative", icon: <FontAwesomeIcon size='xl'icon={faBook} />,content: tabContent1() },
+                    { title: "Steps", icon: <FontAwesomeIcon size='xl'icon={faListCheck} />,content: tabContent2() },
+                    { title: "Live Site", icon: <FontAwesomeIcon size='xl'icon={faGlobe} />,content: tabContent3() },
                 ]}
             />
 

@@ -2,7 +2,8 @@
 import styles from "../project.module.css";
 import post from "../../styles/post.module.css";
 import TabContainer from "@/app/components/TabContainer"; // Ensure this import path is correct
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGift, faSleigh, faWaveSquare, faSpinner } from "@fortawesome/free-solid-svg-icons";
 const Page = ({ params }) => {
     // The tab state and handleTab function are now managed by TabContainer
 
@@ -78,10 +79,10 @@ const Page = ({ params }) => {
 
             <TabContainer
                 contentTabs={[
-                    { title: "Christmas", content: tabContent1JSX },
-                    { title: "Santa", content: tabContent2JSX },
-                    { title: "Wave Function", content: tabContent3JSX },
-                    { title: "Preloader", content: tabContent4JSX },
+                    { title: "Christmas", icon: <FontAwesomeIcon size='xl'icon={faGift} />, content: tabContent1JSX },
+                    { title: "Santa", icon: <FontAwesomeIcon size='xl'icon={faSleigh} />, content: tabContent2JSX },
+                    { title: "Wave Function", icon: <FontAwesomeIcon size='xl'icon={faWaveSquare} />, content: tabContent3JSX },
+                    { title: "Preloader", icon: <FontAwesomeIcon size='xl'icon={faSpinner} />,content: tabContent4JSX },
                 ]}
             />
         </div>

@@ -1,10 +1,19 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-
+import { useMediaQuery } from "react-responsive";
 import post from "../styles/post.module.css";
-const Tab = ({ number, tab, text, handleTab }) => {
-    return (
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGift } from "@fortawesome/free-solid-svg-icons";
+const Tab = ({ number, tab, text, handleTab, isMobile, icon }) => {
+    return isMobile ? (
+        <button
+            className={`${tab === number ? post.active : post.inactive}`}
+            onClick={() => handleTab(number)}
+        >
+            {icon}
+        </button>
+    ) : (
         <button
             className={`${tab === number ? post.active : post.inactive}`}
             onClick={() => handleTab(number)}
@@ -18,7 +27,9 @@ const TabContainer = ({ contentTabs }) => {
     const [tab, setTab] = useState(1);
     const handleTab = (newTab) => setTab(newTab);
     const numberOfTabs = contentTabs.length;
-   
+    const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+
+    // TODO if 768 top tabs, remove dynamic style, replace non active tabs with icons to shorten space
     const dynamicStyle = {
         height: `${numberOfTabs * 300}px`,
         // position: pinBox ? "sticky" : "relative",
@@ -26,10 +37,14 @@ const TabContainer = ({ contentTabs }) => {
         // bottom: pinBox ? "auto" : 0,
     };
 
-
+    const mobileTabLayout = isMobile
+        ? {
+              gridTemplateColumns: `repeat(${numberOfTabs}, minmax(50px, 300px))`,
+          }
+        : {};
     return (
-        <motion.div className={post.container} style={dynamicStyle} >
-            <div className={post.tabs}>
+        <motion.div className={post.container} style={dynamicStyle}>
+            <div className={post.tabs} style={mobileTabLayout}>
                 {/* add hint to click tabs */}
                 {contentTabs.map((tabInfo, index) => (
                     <Tab
@@ -38,6 +53,8 @@ const TabContainer = ({ contentTabs }) => {
                         tab={tab}
                         text={tabInfo.title}
                         handleTab={handleTab}
+                        isMobile={isMobile}
+                        icon={tabInfo.icon}
                     />
                 ))}
             </div>
@@ -64,7 +81,6 @@ const TabContainer = ({ contentTabs }) => {
                         {content.content}
                     </div>
                 ))}
-           
         </motion.div>
     );
 };

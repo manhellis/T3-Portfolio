@@ -2,7 +2,8 @@
 import styles from "../project.module.css";
 import post from "../../styles/post.module.css";
 import TabContainer from "@/app/components/TabContainer"; // Ensure correct import path
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCirclePlay, faCommentDots, faFlagCheckered } from "@fortawesome/free-solid-svg-icons";
 const Page = ({ params }) => {
     const tabContent1JSX = (
         <>
@@ -128,9 +129,9 @@ const Page = ({ params }) => {
 
             <TabContainer
                 contentTabs={[
-                    { title: "Intro", content: tabContent1JSX },
-                    { title: "Process", content: tabContent2JSX },
-                    { title: "Conclusion", content: tabContent3JSX },
+                    { title: "Intro", icon: <FontAwesomeIcon size='xl' icon={faCirclePlay} />,content: tabContent1JSX },
+                    { title: "Process",icon: <FontAwesomeIcon size='xl'icon={faCommentDots} />, content: tabContent2JSX },
+                    { title: "Conclusion", icon: <FontAwesomeIcon size='xl'icon={faFlagCheckered} />,content: tabContent3JSX },
                 ]}
             />
 

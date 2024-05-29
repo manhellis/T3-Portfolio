@@ -2,7 +2,8 @@ import styles from "../project.module.css";
 import post from "../../styles/post.module.css";
 import Link from "next/link";
 import TabContainer from "@/app/components/TabContainer"; // Ensure this import path is correct
-
+import { faCirclePlay, faFillDrip, faServer } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Page = () => {
     const tabContent1JSX = (
         <>
@@ -63,9 +64,9 @@ const Page = () => {
 
             <TabContainer
                 contentTabs={[
-                    { title: "Intro", content: tabContent1JSX },
-                    { title: "Scraping", content: tabContent2JSX },
-                    { title: "Hosting", content: tabContent3JSX },
+                    { title: "Intro",icon: <FontAwesomeIcon icon={faCirclePlay} />, content: tabContent1JSX },
+                    { title: "Scraping", icon: <FontAwesomeIcon icon={faFillDrip} />,content: tabContent2JSX },
+                    { title: "Hosting", icon: <FontAwesomeIcon icon={faServer} />,content: tabContent3JSX },
                 ]}
             />
             <div className={post.spacer}></div>

@@ -4,6 +4,8 @@ import post from "../../styles/post.module.css";
 import Link from "next/link";
 import { useState } from "react";
 import TabContainer from "@/app/components/TabContainer"; // Ensure this import path is correct
+import { faCirclePlay, faComments, faGlobe } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Page = ({ params }) => {
     // No need to manage tab state here, TabContainer handles it internally
@@ -84,9 +86,9 @@ const Page = ({ params }) => {
 
             <TabContainer
                 contentTabs={[
-                    { title: "Intro", content: tabContent1JSX },
-                    { title: "Conclusion", content: tabContent2JSX },
-                    { title: "Visit Site", content: tabContent3JSX },
+                    { title: "Intro", icon: <FontAwesomeIcon icon={faCirclePlay} />,content: tabContent1JSX },
+                    { title: "Conclusion", icon: <FontAwesomeIcon icon={faComments} />, content: tabContent2JSX },
+                    { title: "Visit Site", icon: <FontAwesomeIcon icon={faGlobe} />, content: tabContent3JSX },
                 ]}
             />
         </div>
