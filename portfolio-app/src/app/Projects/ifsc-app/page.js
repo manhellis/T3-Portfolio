@@ -64,9 +64,9 @@ const Page = () => {
 
             <TabContainer
                 contentTabs={[
-                    { title: "Intro",icon: <FontAwesomeIcon icon={faCirclePlay} />, content: tabContent1JSX },
-                    { title: "Scraping", icon: <FontAwesomeIcon icon={faFillDrip} />,content: tabContent2JSX },
-                    { title: "Hosting", icon: <FontAwesomeIcon icon={faServer} />,content: tabContent3JSX },
+                    { title: "Intro",icon: <FontAwesomeIcon size='xl'icon={faCirclePlay} />, content: tabContent1JSX },
+                    { title: "Scraping", icon: <FontAwesomeIcon size='xl'icon={faFillDrip} />,content: tabContent2JSX },
+                    { title: "Hosting", icon: <FontAwesomeIcon size='xl'icon={faServer} />,content: tabContent3JSX },
                 ]}
             />
             <div className={post.spacer}></div>
