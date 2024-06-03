@@ -55,7 +55,7 @@ export default function Home() {
                     <Link href="/Projects">See Projects</Link>
                 </div>
                 <div className={`${styles.cta2} ${styles.cta}`}>
-                    <Link href="/Projects">Contact Me</Link>
+                    <a target="_blank" href="https://www.linkedin.com/in/manhellis/">Contact Me</a>
                 </div>
                 {/* </div> */}
             </div>

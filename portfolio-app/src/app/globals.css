@@ -90,15 +90,14 @@ a:hover {
     left: -10%;
     width: 110lvw; /* Full width */
     height: 100vh; /* Full height */
-    z-index: 1000; /* Ensure it's above other content */
+    z-index: 10; /* Ensure it's above other content */
     display: none; /* Hidden by default */
     /* Add your background, padding, etc., below */
-    background-color: rgba(108, 108, 108, 0.8); /* Example background */
+    background-color: rgba(108, 108, 108, 0.98); /* Example background */
     /* overflow-y: auto; Allows scrolling within the header if needed */
     overflow: clip;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(30px);
     grid-template-rows: 10% 80% 10%;
     grid-template-columns: repeat(3, 1fr);
     /* transition: all 0.5s ease-in-out; */
@@ -188,9 +187,14 @@ footer {
 }
 
 footer .links {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    /* grid-template-rows: 1fr 1fr; */
     justify-content: space-between;
     margin: 1rem;
+    
+    border-radius: 15px;
+    background-color: hsla(var(--champagne-pink), 0.31);
 }
 footer h2 {
     /* font-family: var(--font-plex-sans); */
@@ -204,14 +208,17 @@ footer h2 {
 }
 footer a {
     padding: 2rem;
+    transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+
 }
 footer a:hover {
     color: var(--sandy-brown-base);
+    background-color: hsla(var(--champagne-pink), 0.6);
 }
 
 footer .phone {
     cursor: pointer;
-    transition: opacity 0.5s ease-in-out; /* Smooth transition for the opacity */
+    transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
 }
 
 .animated {
@@ -271,7 +278,11 @@ main {
 }
 
 /* media queries */
-
+@media (max-width: 1280px){
+    header, footer {
+        width: calc(100% - 80px);
+    }
+}
 /* For tablets and below (less than 768px) */
 @media (max-width: 768px) {
     main {
@@ -303,7 +314,9 @@ main {
         margin-bottom: 15px;
     }
     footer .links {
-        flex-direction: column;
+        width: 60%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
         margin: 0;
     }
     footer .links a {

@@ -122,6 +122,7 @@
 }
 .cta {
     text-align: center;
+    /* text-wrap: nowrap; */
     padding: 1em;
     /* background-color: hsla(var(--champagne-pink), 0.59); */
     border-radius: 15px;
@@ -154,8 +155,8 @@
 }
 @media (max-width:768px) {
     .landingImage{
-        height: 300px;
-        width: 300px;
+        max-width: 300px;
+        max-height: 300px;
         grid-column: 4/8;
     }
     .landingText {
