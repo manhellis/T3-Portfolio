@@ -69,9 +69,7 @@ const Page = () => {
                     { title: "Hosting", icon: <FontAwesomeIcon size='xl'icon={faServer} />,content: tabContent3JSX },
                 ]}
             />
-            <div className={post.spacer}></div>
-            <div className={post.spacer}></div>
-            <div className={post.spacer}></div>
+         
         </div>
     );
 };
