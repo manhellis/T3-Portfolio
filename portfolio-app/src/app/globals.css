@@ -327,10 +327,6 @@ main {
 /* For small smartphones (less than 480px) */
 @media (max-width: 480px) {
     main {
-        grid-template-columns: repeat(
-            4,
-            1fr
-        ); /* Simplify grid further for small smartphones */
         margin: 0 20px; /* Optional: Adjust margins for smaller screens */
     }
 
