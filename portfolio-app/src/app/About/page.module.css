@@ -1,45 +1,52 @@
 .h1 {
     font-size: 72px;
     font-weight: 700;
-    letter-spacing: 0.11em;
     /* grid-column: 1 / 4; */
-    white-space: nowrap;
-    margin-left: 60px;
+    /* white-space: nowrap; */
     /* mix-blend-mode: exclusion; */ /*  would be cool to find a nice blend mode here */
 }
 .sectionHeader {
     font-size: 72px;
     font-weight: 700;
-    letter-spacing: 0.11em;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     margin-left: 60px;
 }
 .h2 {
     /* font-family: "IBM Plex Sans", sans-serif; */
-    margin-top: 100px;
     font-family: var(--font-plex-sans);
     font-weight: 300;
     font-size: 24px;
-    letter-spacing: 0.21em;
     color: hsla(var(--raisin-black-base), 0.6);
     text-align: left;
-    grid-column: 1 / 6;
-    margin-left: 60px;
+    grid-column: 2 / 6;
     grid-row: 2;
+    justify-self: start;
+    align-self: start;
 }
 /* refactor begin */
 .about {
+    border-radius: 45px;
     grid-column: 1 / -1;
-    display: flex;
+
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-rows: 2;
     flex-direction: row;
     margin-bottom: 2em;
+    box-shadow: 0 8px 32px 0 hsla(var(--tropical-indigo), 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background-color: hsla(var(--champagne-pink), 0.2);
+    backdrop-filter: blur(15px);
+    position: relative;
+    margin-top: 200px;
+    margin-bottom: 150px;
 }
 
 .part1,
 .part2 {
     grid-column: 1 / -1;
-    display: flex;
-    flex-direction: column;border-radius: 35px;
+    flex-direction: column;
+    border-radius: 35px;
     background-color: hsla(var(--champagne-pink), 0.3);
     backdrop-filter: blur(15px);
     box-shadow: 0 8px 32px 0 hsla(var(--tropical-indigo), 0.7);
@@ -49,7 +56,6 @@
     display: flex;
     flex-direction: row;
     /* width: 100%; */
-    
 }
 .halfSize {
     padding: 2em;
@@ -71,44 +77,39 @@
 .title {
     font-size: 72px;
     font-weight: 700;
-    letter-spacing: 0.11em;
-    grid-column: 1 / 6;
+    grid-column: 2 / 6;
     white-space: nowrap;
-    margin-left: 60px;
     margin-top: 100px;
 }
 .titleCard {
-    margin-top: 200px;
-    margin-bottom: 150px;
-    display: block;
-    grid-row: 1;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-row: 1/3;
     grid-column: 1/ 7;
 }
 
 .image {
     border-radius: 100%;
-    width: 415px;
-    height: 415px;
-    background-color: hsla(var(--champagne-pink), 0.59);
-    background-image: url("/pfp_1.webp");
+    /* max-width: 415px; */
+    width: 100%;
+    /* max-height: 45px; */
     background-repeat: no-repeat;
-    /* padding-top: 200px; */
-    /* margin: 100px 50px; */
+   
 }
+/* padding-top: 200px; */
+/* margin: 100px 50px; */
 .imageContainer {
-    box-shadow: 0 8px 32px 0 hsla(var(--tropical-indigo), 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    background-color: hsla(var(--champagne-pink), 0.2);
-    backdrop-filter: blur(15px);
-    grid-column: 7 / 13;
     grid-row: 1/2;
-    padding: 100px;
+    grid-column: 7 / 12;
+    padding: 50px 0;
+    grid-row: 1/3;
     border-radius: 35px;
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     transition: all 0.5s ease-in-out;
+    /* background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    width: 100%;
+    height: 100%; */
 }
 .imageContainerTwo {
     background-color: hsla(var(--champagne-pink), 0.2);
@@ -119,7 +120,40 @@
 }
 
 @media (max-width: 1024px) {
-    .fullSize, .about{
+    .fullSize,
+    .about {
         flex-direction: column;
+    }
+    .imageContainer {
+        grid-column: 8/12;
+    }
+    .about {
+        padding-bottom: 50px;
+    }
+    .title {
+        margin-top:50px
+    }
+    
+
+}
+@media (width < 768px){
+    .imageContainer {
+        grid-row: 3;
+        grid-column: 2/8;
+        display: flex;
+        justify-content: center;
+    }
+    .image {
+        max-width: 415px;
+    }
+    .titleCard {
+        grid-column: 1/ 9;
+    }
+    .h2 {
+        grid-column:2/8;
+    }
+    .sectionHeader {
+        margin-left: 30px;
+        font-size: 50px;
     }
 }
