@@ -60,6 +60,11 @@
     color: var(--raisin-black-base);
     background-color: var(--active-tab-color);
     border-radius: 35px;
+    display: flex;
+    text-align: left;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
     /* needs variety depending on tab */
 }
 /* if first child of .tabs, smooth description_1 border radius
@@ -195,6 +200,7 @@
 /* content */
 .h1 {
     font-size: 1.3em;
+    align-self:start;
 }
 .iframe {
     /* width: 720px; */
@@ -207,6 +213,20 @@
     margin-top: 2em;
     overflow: hidden;
 }
+.button {
+    color: var(--raisin-black-base);
+    transition: color 0.3s ease;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 20px;
+    filter: drop-shadow(13px 2px 17px #fbe0cb);
+    --webkit-text-stroke: 2px var(--ultra-violet);
+}
+p, h2{
+    align-self: start;
+}
+
+
 
 @media (max-width: 768px) {
     .container {

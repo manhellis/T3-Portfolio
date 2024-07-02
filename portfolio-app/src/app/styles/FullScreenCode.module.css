@@ -1,0 +1,34 @@
+/* components/FullScreenCode.module.css */
+
+.openButton {
+    padding: 20px 30px;
+    border-radius: 25px;
+    background-color: hsla(var(--champagne-pink), 0.3);
+    border: 1px solid var(--raisin-black-base);
+    transition: all 0.3s ease;
+    cursor:pointer;
+    margin-top: 1.5em;
+  }
+  
+  .fullScreenOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .fullScreenContent {
+    width: 80%;
+    height: 80%;
+    background-color: #282c34;
+    border-radius: 8px;
+    overflow: auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }

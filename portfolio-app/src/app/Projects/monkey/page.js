@@ -5,11 +5,32 @@ import { useState } from "react";
 import Link from "next/link";
 import TabContainer from "@/app/components/TabContainer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import FullScreenCode from "@/app/components/FullScreenCode";
 import { faBook, faGlobe, faListCheck } from "@fortawesome/free-solid-svg-icons";
 const Page = ({ params }) => {
     const [tab, setTab] = useState(1);
     const handleTab = (newTab) => () => setTab(newTab);
+    const r1 = `import Header from "./components/header";
+import Branding from "./components/branding";
+import PostGrid from "./components/postGrid";
+import Footer from "./components/footer";
+function App() {
+    // const [count, setCount] = useState(0);
 
+    return (
+        <>
+            <Header />
+            <main>
+                <Branding />
+                <PostGrid />
+            </main>
+
+            <Footer />
+        </>
+    );
+}
+
+export default App;`
     const tabContent1 = (index) => {
         return (
             <>
@@ -33,39 +54,91 @@ const Page = ({ params }) => {
                     that took inputs title and description, reused in the
                     postGrid component.
                 </p>
+                <FullScreenCode code={r1} />
             </>
         );
     };
+    const r2 = `const openai = new OpenAI({
+    apiKey: import.meta.env.VITE_OPENAI_KEY,
+    dangerouslyAllowBrowser: true,
+});
 
+async function getContent() {
+    const response = await openai.chat.completions.create({
+        messages: [
+            {
+                role: "assistant",
+                content:
+                    "Generate 10 funny monkey Jokes, each joke should be around 15 words. respond with a json object with title and description properties for each joke. the json object should be formatted like [{title: 'joke title', description: 'joke description'}].",
+            },
+        ],
+        model: "gpt-4-0125-preview",
+        response_format: { type: "json_object" },
+    });
+
+    const answer = response.choices[0].message.content;
+    return answer;
+}
+
+const PostGrid = () => {
+    const [content, setContent] = useState("");
+
+    useEffect(() => {
+        getContent().then((response) => setContent(JSON.parse(response)));
+    }, []);
+
+    if (!content) {
+        return (
+            <div className="postGrid">
+                Loading..
+                <FontAwesomeIcon icon="fa-solid fa-spinner" spin />
+            </div>
+        );
+    }
+
+    // const json_content = JSON.parse(content);
+
+    return (
+        <div>
+            <div className="postGrid">
+                {/* {content} */}
+                {content.jokes.map((item) => (
+                    <Card title={item.title} content={item.description} />
+                ))}
+            </div>
+        </div>
+    );
+};`
     const tabContent2 = (index) => {
         return (
             <>
                 <h2 className={post.h1}>Loading Cards from Json:</h2>
-                <p>
+                <p classname={post.p}>
                     A json file with data from the original site was created and
                     loaded as an object, passed through the map function to
                     create the post grid.
                 </p>
                 <h2 className={post.h1}>Fetch OpenAI API:</h2>
-                <p>
+                <p classname={post.p}>
                     Implemented the OpenAI API to generate new content, setting
                     up an API object and an await function to fetch monkey
                     jokes.
                 </p>
                 <h2 className={post.h1}>UseEffect and Finishing Touches:</h2>
-                <p>
+                <p classname={post.p}>
                     JSON.parse was used for the response when setting the state
                     value, displaying a loading text until the content loads and
                     the fetched data is mapped to card components.
                 </p>
                 <h1 className={post.h1}>Conclusion:</h1>
-                <p>
+                <p classname={post.p}>
                     This project showcases porting a site to React, using AI via
                     an authenticated API call, and dynamic component loading.
                     Originally a styling exercise, it evolved into a
                     demonstration of integrating React with third-party APIs and
                     JSON data manipulation.
                 </p>
+                <FullScreenCode code={r2} />
             </>
         );
     };
