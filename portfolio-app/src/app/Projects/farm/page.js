@@ -31,7 +31,7 @@ function animate() {
     const tabContent1JSX = (
         <>
             <h1 className={post.h1}>Narrative:</h1>
-            <p>
+            <p className={post.p}>
                 ThreeJs was recommended as a JavaScript Library for implementing
                 a term project. Intrigued by the possibility of building a 3D
                 scene and navigating it within the browser, I embarked on this

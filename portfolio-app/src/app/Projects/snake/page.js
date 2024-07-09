@@ -31,7 +31,7 @@ const Page = ({ params }) => {
     const tabContent1JSX = (
         <>
             <h1 className={post.h1}>Purpose:</h1>
-            <p>
+            <p className={post.p}>
                 The goal was to make a snake game without using any reference to
                 other existing concepts. As a first project in JS, it shows my
                 decision making at an early stage and demonstrates my eagerness
@@ -51,7 +51,7 @@ const Page = ({ params }) => {
                 </ol>
             </p>
             <h1 className={post.h1}>Drawing a grid on a canvas():</h1>
-            <p>
+            <p className={post.p}>
                 To create a snake game, the basis for the game exists in a 2D
                 plane. I needed a way to draw this grid so that I could place
                 objects within the grid. The canvas element is a square, 600x600
@@ -134,19 +134,19 @@ runGame() {
     const tabContent2JSX = (
         <>
             <h1 className={post.h1}>Drawing an Apple:</h1>
-            <p>
+            <p className={post.p}>
                 Drawing an apple: An apple is just a filled cell, with width and
                 height of cellSize. A random apple uses the Math.floor function
                 along with a Math.random to get a random value that lands within
                 the dimensions of the game.
             </p>
             <h1 className={post.h1}>Drawing a snake:</h1>
-            <p>
+            <p className={post.p}>
                 A snake, the player character, is just a box drawn in the center
                 to begin.
             </p>
             <h1 className={post.h1}>Controls</h1>
-            <p>
+            <p className={post.p}>
                 I add an event listener to the window that looks for key down
                 user input. It passes this information to the function
                 runControls(e): which introduces a switch for WASD cardinal
@@ -227,7 +227,7 @@ runGame() {
     const tabContent3JSX =  (
         <>
             <h1 className={post.h1}>The Snake Tail:</h1>
-            <p>
+            <p className={post.p}>
                 The function <code>moveSnake(x,y)</code>: moves the player from
                 its current position to its next position. Moving the box is
                 basically erasing its current position and filling the new
@@ -244,7 +244,7 @@ runGame() {
                 player.
             </p>
             <h1 className={post.h1}>Upgrades:</h1>
-            <p>
+            <p className={post.p}>
                 Functions I’d like to add (or have added):
                 <ul className={post.ul}>
                     <li>Game start/stop</li>
@@ -253,7 +253,7 @@ runGame() {
                     <li>Class based</li>
                 </ul>
             </p>
-            <p>
+            <p className={post.p}>
                 Essential function to add:
                 <ul className={post.ul}>
                     <li>End game screen and score</li>

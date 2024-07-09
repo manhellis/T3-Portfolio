@@ -222,7 +222,7 @@
     filter: drop-shadow(13px 2px 17px #fbe0cb);
     --webkit-text-stroke: 2px var(--ultra-violet);
 }
-p, h2{
+.p, .h2{
     align-self: start;
 }
 
