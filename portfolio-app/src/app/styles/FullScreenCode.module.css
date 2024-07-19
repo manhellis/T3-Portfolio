@@ -28,7 +28,7 @@
     height: 80%;
     background-color: #282c34;
     border-radius: 8px;
-    overflow: auto;
+    overflow: dd;
     padding: 20px;
     box-sizing: border-box;
   }

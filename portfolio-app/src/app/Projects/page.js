@@ -20,7 +20,7 @@ const Page = () => {
             />
             <ArtifactCard
                 imgSrc={"/Monkey-Selfie.webp"}
-                title="AI Monkey Jokes"
+                title="AI Monkey"
                 description="GPT Wrapper with *style"
                 link="Projects/monkey"
             />

@@ -15,6 +15,7 @@ export default function Home() {
                         layout="fill"
                         objectFit="cover"
                         className={styles.image}
+                        alt="Portrait of Manh Ellis"
                     />
                     {/* <Link href="/Contact" className={styles.cta} scroll={false}>
                         Let's Talk
@@ -74,7 +75,7 @@ export default function Home() {
                 <span className={styles.h1}>Projects</span>
                 <ArtifactCard
                     imgSrc={"/Monkey-Selfie.webp"}
-                    title="AI Monkey Jokes"
+                    title="AI Monkey"
                     description="GPT Wrapper with *style"
                     link="Projects/monkey"
                 />

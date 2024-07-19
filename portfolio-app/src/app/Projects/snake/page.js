@@ -8,6 +8,8 @@ import SyntaxHighlighter from "react-syntax-highlighter/dist/esm/default-highlig
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import FullScreenCode from "@/app/components/FullScreenCode";
 import { useState } from "react";
+
+
 const Page = ({ params }) => {
 
 

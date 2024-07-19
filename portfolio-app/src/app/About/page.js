@@ -14,6 +14,8 @@ const Page = () => {
                     <img
                         src="/pfp_1.webp"
                         className={styles.image}
+                        alt="Portrait of Manh Ellis"
+
                     />
                     </div>
                 </div>

@@ -14,6 +14,21 @@ import { Analytics } from "@vercel/analytics/react"
 export const metadata = {
     title: "Manh Portfolio",
     description: "Maker of things",
+    openGraph: {
+        type: "website",
+        url: "https://manhellis.com",
+        title: "Manh Portfolio",
+        description: "Front End Developer, Tech Enthusiast, Climber",
+        images: [
+            {
+                url: "https://www.manhellis.com/og.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Manh Portfolio",
+            },
+        ],
+    },
+    
 };
 
 export default function RootLayout({ children }) {
