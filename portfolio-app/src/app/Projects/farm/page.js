@@ -4,12 +4,14 @@ import post from "../../styles/post.module.css";
 import Link from "next/link";
 import { useState } from "react";
 import TabContainer from "@/app/components/TabContainer"; // Ensure this import path is correct
-import { faCirclePlay, faComments, faGlobe } from "@fortawesome/free-solid-svg-icons";
+import {
+    faCirclePlay,
+    faComments,
+    faGlobe,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FullScreenCode from "@/app/components/FullScreenCode";
 const Page = ({ params }) => {
-
-
     const scene = `// cube
 const geometry = new THREE.BoxGeometry( 1, 1, 1 );
 const material = new THREE.MeshBasicMaterial( { color: 0xFFD966 } );
@@ -27,22 +29,22 @@ function animate() {
     line.rotation.y += 0.01;
     render.render(scene,camera)
 }
-`
+`;
     const tabContent1JSX = (
         <>
             <h1 className={post.h1}>Narrative:</h1>
             <p className={post.p}>
-                ThreeJs was recommended as a JavaScript Library for implementing
-                a term project. Intrigued by the possibility of building a 3D
-                scene and navigating it within the browser, I embarked on this
-                creative journey.
+                Three.js was recommended as a JavaScript Library for
+                implementing a term project. Intrigued by the possibility of
+                building a 3D scene and navigating it within the browser, I
+                embarked on this creative journey.
             </p>
             <h1 className={post.h1}>Development Process:</h1>
             <h2 className={post.h2}>Basic Scene:</h2>
             <p className={post.p}>
                 My initial step was to create a basic 3D scene, which consisted
                 of a spinning cube. This required constructing a camera object,
-                cube object, lights, and the scene itself, which was then
+                a cube object, lights, and the scene itself, which was then
                 rendered using WebGL.
             </p>
             <p className={post.p}>
@@ -188,7 +190,7 @@ document.querySelector(".cam2").addEventListener("click", () => {
         cameraAnimationTimeline.nextLabel()
     );
 });
-`
+`;
     const tabContent2JSX = (
         <>
             <h2 className={post.h1}>My Own Scene:</h2>
@@ -239,9 +241,21 @@ document.querySelector(".cam2").addEventListener("click", () => {
 
             <TabContainer
                 contentTabs={[
-                    { title: "Intro", icon: <FontAwesomeIcon size='xl'icon={faCirclePlay} />,content: tabContent1JSX },
-                    { title: "Conclusion", icon: <FontAwesomeIcon size='xl'icon={faComments} />, content: tabContent2JSX },
-                    { title: "Visit Site", icon: <FontAwesomeIcon size='xl'icon={faGlobe} />, content: tabContent3JSX },
+                    {
+                        title: "Intro",
+                        icon: <FontAwesomeIcon size="xl" icon={faCirclePlay} />,
+                        content: tabContent1JSX,
+                    },
+                    {
+                        title: "Conclusion",
+                        icon: <FontAwesomeIcon size="xl" icon={faComments} />,
+                        content: tabContent2JSX,
+                    },
+                    {
+                        title: "Visit Site",
+                        icon: <FontAwesomeIcon size="xl" icon={faGlobe} />,
+                        content: tabContent3JSX,
+                    },
                 ]}
             />
         </div>

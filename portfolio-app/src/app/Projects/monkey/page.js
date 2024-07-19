@@ -42,7 +42,7 @@ export default App;`
                 </p>
                 <h1 className={post.h1}>Steps:</h1>
                 <p className={post.p}>Transfer Vanilla HTML site to React</p>
-                <p className={post.p}>Load Card data from json</p>
+                <p className={post.p}>Load Card data from JSON</p>
                 <p className={post.p}>Fetch API data with prompt</p>
                 <p className={post.p}>UseEffect Response and mapping results</p>
                 <h2 className={post.h1}>Vanilla to React:</h2>

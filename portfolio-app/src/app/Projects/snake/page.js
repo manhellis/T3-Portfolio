@@ -3,16 +3,17 @@ import styles from "../project.module.css";
 import post from "../../styles/post.module.css";
 import TabContainer from "@/app/components/TabContainer"; // Ensure correct import path
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCirclePlay, faCommentDots, faFlagCheckered } from "@fortawesome/free-solid-svg-icons";
+import {
+    faCirclePlay,
+    faCommentDots,
+    faFlagCheckered,
+} from "@fortawesome/free-solid-svg-icons";
 import SyntaxHighlighter from "react-syntax-highlighter/dist/esm/default-highlight";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import FullScreenCode from "@/app/components/FullScreenCode";
 import { useState } from "react";
 
-
 const Page = ({ params }) => {
-
-
     const [gridCode, setGridCode] = useState(false);
     const grid = `for (let i = 0; i < this.gridSize; i++) {
                         let xCoord = this.cellSize * i;
@@ -28,19 +29,19 @@ const Page = ({ params }) => {
                         this.ctx.lineTo(this.canvas.width, yCoord);
                         this.ctx.closePath();
                         this.ctx.stroke();
-                    }`
+                    }`;
 
     const tabContent1JSX = (
         <>
             <h1 className={post.h1}>Purpose:</h1>
             <p className={post.p}>
-                The goal was to make a snake game without using any reference to
-                other existing concepts. As a first project in JS, it shows my
-                decision making at an early stage and demonstrates my eagerness
+                The goal was to create a snake game without referencing other
+                existing concepts. As a first project in JS, it showcases my
+                decision-making at an early stage and demonstrates my eagerness
                 to learn.
                 <ol className={post.ol}>
                     <li>
-                        When first being introduced to JavaScript, I was told a
+                        When I was first introduced to JavaScript, I was told a
                         snake game is a great first exercise.
                     </li>
                     <li>
@@ -67,7 +68,6 @@ const Page = ({ params }) => {
             </p>
             {/* <button className={post.link} onClick={()=> setGridCode(!gridCode)}>Show Code</button> */}
             <FullScreenCode code={grid} language="javascript" />
-            
         </>
     );
 
@@ -132,12 +132,12 @@ runGame() {
     }
 
     this.drawGrid();
-}`
+}`;
     const tabContent2JSX = (
         <>
             <h1 className={post.h1}>Drawing an Apple:</h1>
             <p className={post.p}>
-                Drawing an apple: An apple is just a filled cell, with width and
+                An apple is just a filled cell, with width and
                 height of cellSize. A random apple uses the Math.floor function
                 along with a Math.random to get a random value that lands within
                 the dimensions of the game.
@@ -225,8 +225,8 @@ runGame() {
             this.cellSize
         );
     }
-}`
-    const tabContent3JSX =  (
+}`;
+    const tabContent3JSX = (
         <>
             <h1 className={post.h1}>The Snake Tail:</h1>
             <p className={post.p}>
@@ -268,7 +268,6 @@ runGame() {
         </>
     );
 
-
     return (
         <div className={post.post}>
             <div className={styles.title}>
@@ -278,9 +277,25 @@ runGame() {
 
             <TabContainer
                 contentTabs={[
-                    { title: "Intro", icon: <FontAwesomeIcon size='xl' icon={faCirclePlay} />,content: tabContent1JSX },
-                    { title: "Process",icon: <FontAwesomeIcon size='xl'icon={faCommentDots} />, content: tabContent2JSX },
-                    { title: "Conclusion", icon: <FontAwesomeIcon size='xl'icon={faFlagCheckered} />,content: tabContent3JSX },
+                    {
+                        title: "Intro",
+                        icon: <FontAwesomeIcon size="xl" icon={faCirclePlay} />,
+                        content: tabContent1JSX,
+                    },
+                    {
+                        title: "Process",
+                        icon: (
+                            <FontAwesomeIcon size="xl" icon={faCommentDots} />
+                        ),
+                        content: tabContent2JSX,
+                    },
+                    {
+                        title: "Conclusion",
+                        icon: (
+                            <FontAwesomeIcon size="xl" icon={faFlagCheckered} />
+                        ),
+                        content: tabContent3JSX,
+                    },
                 ]}
             />
 

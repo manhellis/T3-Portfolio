@@ -51,7 +51,7 @@ async def search_athlete(query: str = Query(None, min_length=3)):
         <>
             <h1 className={post.h1}>Concept:</h1>
             <p className={post.p}>
-                I've always been obsessed with sport climbing and by extension,
+                I've always been obsessed with sport climbing and, by extension,
                 the related results and statistics. I wanted to create a simple
                 web app that would allow me to search for climbing competitions
                 and view the results in a clean, easy-to-read format.
@@ -66,14 +66,14 @@ async def search_athlete(query: str = Query(None, min_length=3)):
             <p className={post.p}>
                 I started by approaching the concept from what steps I need to
                 accomplish in order to display any event. I needed to scrape the
-                data from the current results page, host the data on my own
-                server, and create a web app that would display the data in a
-                user-friendly way.
+                data from the current results page, host it on my server, and
+                create a web app that would display the data in a user-friendly
+                way.
             </p>
             <p className={post.p}>
                 I used Python to scrape the data from the IFSC site and store it
                 in a set of JSON files. I then created a FastAPI server to serve
-                json documents given the request. Finally, I created a React web
+                JSON documents given the request. Finally, I created a React web
                 app that would fetch the data from my server and display it in a
                 user-friendly manner of my choosing.
             </p>
@@ -116,17 +116,18 @@ if (round.hasOwnProperty("speed_elimination_stages")) {
         <>
             <h2 className={post.h1}>Data Scraping</h2>
             <p className={post.p}>
-                I found an endpoint in the official site that exposed their json
+                I found an endpoint in the official site that exposed their JSON
                 serving system. The data was structured in two distinct
-                groupings, listing of events, and a results json file. The
+                groupings: a listing of events and a results JSON file. The
                 listing of events were accessed after a year was requested. From
-                here I recursively the structure of event data, season data and
-                results data. This allowed me to display any ranking
-                information, from any event and year in the IFSC database.
+                here, I recursively navigated the structure of event data,
+                season data, and results data. This allowed me to display any
+                ranking information, from any event and year in the IFSC
+                database.
             </p>
             <h2 className={post.h1}>Discoveries</h2>
             <p className={post.p}>
-                The IFSC was founded in 2007, so pre 2007 there is less detail
+                The IFSC was founded in 2007, so pre-2007 there is less detail
                 stored about events, such as the counting of attempts or times
                 for certain disciplines. Furthermore, formats have changed over
                 the years, for example the transition from bonuses to zones,
@@ -137,16 +138,16 @@ if (round.hasOwnProperty("speed_elimination_stages")) {
             </p>
             <h1 className={post.h1}>Technical Challenges</h1>
             <p className={post.p}>
-                Scraping the data took considerable time, but generally I didn't
-                make backwards progress often. The total size of the data was
-                around 400MB. Creating an api with FastAPI was a really easy
-                experience, and I was able to create a server very quickly that
-                was very fast. NextJS was maybe not a good choice, but
-                eventually I can migrate the api requests to use server side
-                rendering, which would be a good optimization, and could enable
-                caching of pages beforehand. One of the reasons to use Python
-                was to enable easier data manipulation down the line, for faster
-                integration into data analytic libraries in Python.
+                Scraping the data took considerable time, but generally, I
+                didn't make backward progress often. The total size of the data
+                was around 400MB. Creating an api with FastAPI was a really easy
+                experience, and I was able to create a fast server quickly.
+                NextJS was maybe not a good choice, but eventually I can migrate
+                the api requests to use server side rendering, which would be a
+                good optimization, and could enable caching of pages beforehand.
+                One of the reasons to use Python was to enable easier data
+                manipulation down the line, for faster integration into data
+                analytic libraries in Python.
             </p>
             <FullScreenCode code={r2} />
         </>
@@ -162,7 +163,7 @@ if (round.hasOwnProperty("speed_elimination_stages")) {
                 this allows me to easily scale the app in the future. Seting up
                 Docker Compose was challenging, and it might not have been the
                 most efficient method. The primary issues was that my containers
-                were often 1gb in file size, so testing and uploading took time.
+                were often 1GB in file size, so testing and uploading took time.
             </p>
             <div className={post.linkContainer}>
                 <Link

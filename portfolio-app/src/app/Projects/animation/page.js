@@ -3,7 +3,12 @@ import styles from "../project.module.css";
 import post from "../../styles/post.module.css";
 import TabContainer from "@/app/components/TabContainer"; // Ensure this import path is correct
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGift, faSleigh, faWaveSquare, faSpinner } from "@fortawesome/free-solid-svg-icons";
+import {
+    faGift,
+    faSleigh,
+    faWaveSquare,
+    faSpinner,
+} from "@fortawesome/free-solid-svg-icons";
 const Page = ({ params }) => {
     // The tab state and handleTab function are now managed by TabContainer
 
@@ -28,7 +33,11 @@ const Page = ({ params }) => {
                 easing functions. An outline stroke animation added a
                 tinsel-like flair.
             </p>
-            <iframe src="/tree.html" className={post.iframe} title="Christmas Tree" />
+            <iframe
+                src="/tree.html"
+                className={post.iframe}
+                title="Christmas Tree"
+            />
         </>
     );
 
@@ -36,11 +45,15 @@ const Page = ({ params }) => {
         <>
             <h2 className={post.h1}>Santa Claus Scene:</h2>
             <p className={post.p}>
-                This animation involved a moving background with a flying Santa
+                This animation involves a moving background with a flying Santa
                 GIF, controlled via a mousemove event listener to keep Santa
                 within the moving landscape.
             </p>
-            <iframe src="/santa.html" className={post.iframe} title="Santa Claus" />
+            <iframe
+                src="/santa.html"
+                className={post.iframe}
+                title="Santa Claus"
+            />
         </>
     );
 
@@ -54,7 +67,11 @@ const Page = ({ params }) => {
                 sliders, showcasing practical applications like preloaders or
                 progress bars.
             </p>
-            <iframe src="/wave.html" className={post.iframe} title="Wave Function" />
+            <iframe
+                src="/wave.html"
+                className={post.iframe}
+                title="Wave Function"
+            />
         </>
     );
 
@@ -66,7 +83,11 @@ const Page = ({ params }) => {
                 around a center point, with changing border radii, demonstrating
                 a lightweight visual element suitable for various uses.
             </p>
-            <iframe src="/preloader.html" className={post.iframe} title="Preloader" />
+            <iframe
+                src="/preloader.html"
+                className={post.iframe}
+                title="Preloader"
+            />
         </div>
     );
 
@@ -79,10 +100,26 @@ const Page = ({ params }) => {
 
             <TabContainer
                 contentTabs={[
-                    { title: "Christmas", icon: <FontAwesomeIcon size='xl'icon={faGift} />, content: tabContent1JSX },
-                    { title: "Santa", icon: <FontAwesomeIcon size='xl'icon={faSleigh} />, content: tabContent2JSX },
-                    { title: "Wave Function", icon: <FontAwesomeIcon size='xl'icon={faWaveSquare} />, content: tabContent3JSX },
-                    { title: "Preloader", icon: <FontAwesomeIcon size='xl'icon={faSpinner} />,content: tabContent4JSX },
+                    {
+                        title: "Christmas",
+                        icon: <FontAwesomeIcon size="xl" icon={faGift} />,
+                        content: tabContent1JSX,
+                    },
+                    {
+                        title: "Santa",
+                        icon: <FontAwesomeIcon size="xl" icon={faSleigh} />,
+                        content: tabContent2JSX,
+                    },
+                    {
+                        title: "Wave Function",
+                        icon: <FontAwesomeIcon size="xl" icon={faWaveSquare} />,
+                        content: tabContent3JSX,
+                    },
+                    {
+                        title: "Preloader",
+                        icon: <FontAwesomeIcon size="xl" icon={faSpinner} />,
+                        content: tabContent4JSX,
+                    },
                 ]}
             />
         </div>
