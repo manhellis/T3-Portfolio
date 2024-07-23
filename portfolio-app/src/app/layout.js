@@ -42,7 +42,7 @@ export default function RootLayout({ children }) {
                 {children}
                 <Footer />
                 <div className="bg-three">
-                    <Stage />
+                    {/* <Stage /> */}
                     {/* <OptimizedStage /> */}
                 </div>
                 <SpeedInsights />

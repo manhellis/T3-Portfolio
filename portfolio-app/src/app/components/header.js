@@ -49,7 +49,7 @@ const Header = () => {
                         <Link href="/About" scroll={false} >About</Link>
                     </li>
                     <li>
-                       <Link href="/Contact" scroll={false} >Contact</Link>
+                       <Link href="/Photography" scroll={false} >Photography</Link>
                         {/* <a className="mailto" href="mailto:manh@manhellis.com">
                             Contact
                         </a> */}
