@@ -43,6 +43,12 @@ const Page = () => {
                 description="Python, Docker, NextJs"
                 link="Projects/ifsc-app"
             />
+              <ArtifactCard
+                imgSrc={"/yearbook.webp"}
+                title="Yearbook App"
+                description="PHP, JS, Teamwork"
+                link="Projects/yearbook"
+            />
             {/* <ArtifactCard />
             <ArtifactCard />
             <ArtifactCard />
