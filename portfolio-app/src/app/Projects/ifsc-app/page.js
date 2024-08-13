@@ -183,7 +183,7 @@ if (round.hasOwnProperty("speed_elimination_stages")) {
     return (
         <div className={post.post}>
             <div className={styles.title}>
-                <h1 className={styles.h1}>Exploring ThreeJs for Web 3D</h1>
+                <h1 className={styles.h1}>IFSC Results Browser</h1>
                 <h2>Project Overview</h2>
             </div>
 
