@@ -7,3 +7,4 @@ portfolio-app-tw/portfolio-app-tw/.next/
 portfolio-app-tw/portfolio-app-tw/node_modules/.bin/autoprefixer
 *.png
 asset_storage/
+.aider*

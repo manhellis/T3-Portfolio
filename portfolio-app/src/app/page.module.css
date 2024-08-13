@@ -14,7 +14,7 @@
     color: var(--raisin-black-base);
     grid-column: 6 / 12;
     /* text-align: right; */
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
 .hook {
     font-family: "IBM Plex Sans", sans-serif;
