@@ -16,8 +16,8 @@ import { OrbitControls } from "@react-three/drei";
 // potential new colors
 
 //i use a not brand color for blue
-const baseColor = new THREE.Color("#918CC6"); // Blue, representing slower speed
-const maxSpeedColor = new THREE.Color("#f5974e"); // Red, representing higher speed
+const baseColor = new THREE.Color("#847FCF"); // Brighter purple
+const maxSpeedColor = new THREE.Color("#FF9F4D"); // More vibrant orange
 THREE.ColorManagement.enabled = true; // scaling performance r3f
 // should rewrite this entire canvas, first create meshes by color, then create instances of each mesh color type, then append instanced gemoetries together?
 const Circle = ({ orbitRadius, inclination, phase, speed, direction }) => {
@@ -114,106 +114,91 @@ const generateCircles = (count) => {
     }
     return circles;
 };
-// const InstancedCircles = ({ count }) => {
-//     const meshRef = useRef();
+const InstancedCircles = ({ count }) => {
+    const meshRef = useRef();
+    
+    // Add params back with proper initialization
+    const params = useMemo(() => {
+        const arr = [];
+        for (let i = 0; i < count; i++) {
+            arr.push({
+                orbitRadius: Math.random() * 9 + 1,
+                inclination: Math.random() * Math.PI,
+                phase: Math.random() * 2 * Math.PI,
+                speed: Math.random() * 0.1,
+                direction: Math.random() > 0.5 ? 1 : -1
+            });
+        }
+        return arr;
+    }, [count]);
 
-//     // Remove the materialRef as it's not used for individual color setting
-//     // const materialRef = useRef(new THREE.MeshLambertMaterial());
+    const colorArray = useMemo(() => {
+        const arr = new Float32Array(count * 3);
+        for (let i = 0; i < count; i++) {
+            const { speed } = params[i]; // Get speed from params
+            const speedFactor = speed * 7;
+            const color = new THREE.Color().lerpColors(baseColor, maxSpeedColor, speedFactor);
+            arr[i * 3] = color.r;
+            arr[i * 3 + 1] = color.g;
+            arr[i * 3 + 2] = color.b;
+        }
+        return arr;
+    }, [count, params]); // Add params as dependency
 
-//     // Generate positions, speed factors, phases, directions, and prepare color data
-//     const [positions, speedFactors, phases, directions, colors] =
-//         useMemo(() => {
-//             const positions = new Float32Array(count * 3);
-//             const speedFactors = new Float32Array(count);
-//             const phases = new Float32Array(count);
-//             const directions = new Float32Array(count);
-//             const colors = new Float32Array(count * 3); // For RGB color of each instance
+    useFrame(({ clock }) => {
+        const elapsedTime = clock.getElapsedTime();
+        const matrix = new THREE.Matrix4();
+        
+        params.forEach(({ orbitRadius, inclination, phase, speed, direction }, i) => {
+            const t = elapsedTime * speed + phase;
+            const x = orbitRadius * Math.sin(inclination) * Math.cos(t) * direction;
+            const y = orbitRadius * Math.sin(inclination) * Math.sin(t) * direction;
+            const z = orbitRadius * Math.cos(inclination);
+            
+            // Update instance matrix
+            matrix.makeTranslation(x, y, z);
+            meshRef.current.setMatrixAt(i, matrix);
+            
+            // Update colors
+            const speedFactor = speed * 7;
+            const color = new THREE.Color().lerpColors(baseColor, maxSpeedColor, speedFactor);
+            colorArray[i * 3] = color.r;
+            colorArray[i * 3 + 1] = color.g;
+            colorArray[i * 3 + 2] = color.b;
+        });
+        
+        meshRef.current.instanceMatrix.needsUpdate = true;
+        
+        // Add null check for geometry and color attribute
+        if (meshRef.current?.geometry?.attributes?.color) {
+            meshRef.current.geometry.attributes.color.needsUpdate = true;
+        }
+    });
 
-//             for (let i = 0; i < count; i++) {
-//                 // configure
-//                 const orbitRadius = Math.random() * 9 + 1;
-//                 const inclination = Math.random() * Math.PI;
-//                 const phase = Math.random() * 2 * Math.PI;
-//                 const speed = Math.random() * 0.5 + 0.1;
-//                 const direction = Math.random() > 0.5 ? 1 : -1;
-//                 const speedFactor = (speed - 0.1) / (0.6 - 0.1); // Normalize speed between 0.1 and 0.6 for color interpolation
-
-//                 positions[i * 3 + 0] = orbitRadius;
-//                 positions[i * 3 + 1] = inclination;
-//                 positions[i * 3 + 2] = 0; // z position is not needed for the orbit calculation
-
-//                 speedFactors[i] = speed;
-//                 phases[i] = phase;
-//                 directions[i] = direction;
-
-//                 // Calculate color based on speed and set it
-//                 const color = new THREE.Color().lerpColors(
-//                     baseColor,
-//                     maxSpeedColor,
-//                     speedFactor
-//                 );
-//                 colors[i * 3 + 0] = color.r;
-//                 colors[i * 3 + 1] = color.g;
-//                 colors[i * 3 + 2] = color.b;
-//             }
-//             return [positions, speedFactors, phases, directions, colors];
-//         }, [count]);
-
-//     // Animation
-//     useFrame(({ clock }) => {
-//         const elapsedTime = clock.getElapsedTime();
-
-//         for (let i = 0; i < count; i++) {
-//             const speed = speedFactors[i];
-//             const phase = phases[i];
-//             const direction = directions[i];
-//             const t = elapsedTime * speed + phase;
-
-//             const orbitRadius = positions[i * 3 + 0];
-//             const inclination = positions[i * 3 + 1];
-
-//             const x =
-//                 orbitRadius * Math.sin(inclination) * Math.cos(t) * direction;
-//             const y =
-//                 orbitRadius * Math.sin(inclination) * Math.sin(t) * direction;
-//             const z = orbitRadius * Math.cos(inclination); // Adjust if you need 3D movement
-
-//             meshRef.current.setMatrixAt(
-//                 i,
-//                 new THREE.Matrix4().makeTranslation(x, y, z)
-//             );
-//         }
-//         meshRef.current.instanceMatrix.needsUpdate = true;
-//     });
-
-//     return (
-//         <instancedMesh ref={meshRef} args={[null, null, count]}>
-//             <sphereGeometry args={[0.5, 32, 32]} />
-//             <meshLambertMaterial vertexColors={THREE.VertexColors} />
-//             {/* Attach color attribute to geometry */}
-//             {useMemo(
-//                 () => (
-//                     <instancedBufferAttribute
-//                         attachObject={["attributes", "color"]}
-//                         args={[colors, 3]}
-//                     />
-//                 ),
-//                 [colors]
-//             )}
-//         </instancedMesh>
-//     );
-// };
+    return (
+        <instancedMesh ref={meshRef} args={[null, null, count]}>
+            <sphereGeometry args={[0.5, 32, 32]}>
+                <instancedBufferAttribute
+                    attach="attributes-color"
+                    args={[colorArray, 3]}
+                />
+            </sphereGeometry>
+            <meshLambertMaterial 
+                vertexColors={true}
+                emissiveIntensity={1.5}
+                // Remove fixed white emissive color
+                emissive={baseColor} // Use base color as emissive base
+            />
+        </instancedMesh>
+    );
+};
 
 export default function Stage() {
-    const circles = useMemo(() => generateCircles(80), []);
     return (
         <Canvas camera={{ position: [0, 0, 15], near: 1, far: 20 }}>
             <ambientLight intensity={1.5} />
             <pointLight position={[0, 10, 0]} />
-            {circles.map((props, index) => (
-                <Circle key={index} {...props} />
-            ))}
-            {/* <InstancedCircles count={80} /> */}
+            <InstancedCircles count={80} />
             <EffectComposer>
                 <ToneMapping adaptive={true} />
                 <N8AO aoRadius={0.5} intensity={1} />
